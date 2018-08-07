@@ -19,6 +19,7 @@
     <SUITE FILE_PATH="coverage/longtest$http.coverage" NAME="http Coverage Results" MODIFIED="1533625104839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$mysql.coverage" NAME="mysql Coverage Results" MODIFIED="1533628027652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest_test_b_run.coverage" NAME="Unittests for test.MyTest.test_b_run Coverage Results" MODIFIED="1533633571626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_query_MyTest.coverage" NAME="Unittests for test_query.MyTest Coverage Results" MODIFIED="1533639492582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest.coverage" NAME="Unittests for test_query.MyTest Coverage Results" MODIFIED="1533638007493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_query_MyTest_testQuery3.coverage" NAME="Unittests for test_query.MyTest.testQuery3 Coverage Results" MODIFIED="1533636491864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -27,8 +28,11 @@
       <file leaf-file-name="testquery_old.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testquery_old.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-490">
-              <caret line="3" column="11" selection-start-line="3" selection-end-line="4" />
+            <state relative-caret-position="571">
+              <caret line="124" column="30" selection-start-line="124" selection-start-column="14" selection-end-line="124" selection-end-column="30" />
+              <folding>
+                <element signature="e#19#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,8 +40,8 @@
       <file leaf-file-name="test_query.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+            <state relative-caret-position="538">
+              <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -49,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/mysql.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -57,7 +61,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="1305">
               <caret line="92" column="49" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="49" />
             </state>
           </provider>
@@ -71,7 +75,7 @@
       <file leaf-file-name="testBuildCube.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testBuildCube.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
+            <state relative-caret-position="1560">
               <caret line="109" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="e#19#34#0" expanded="true" />
@@ -122,7 +126,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="22" />
-    <option name="y" value="23" />
+    <option name="y" value="54" />
     <option name="width" value="1400" />
     <option name="height" value="790" />
   </component>
@@ -131,6 +135,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -146,14 +151,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -175,7 +180,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Unittests for test_query.MyTest">
     <configuration name="" type="PythonConfigurationType" factoryName="Python">
       <module name="longtest" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -329,18 +334,17 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="23" width="1400" height="790" extended-state="0" />
+    <frame x="22" y="54" width="1400" height="790" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.325419" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.325419" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -352,6 +356,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -368,6 +373,53 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/testquery_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="11" selection-start-line="3" selection-end-line="4" />
+          <folding>
+            <element signature="e#19#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="92" column="49" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/sql1.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testBuildCube.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#19#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testquery_old.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -393,14 +445,14 @@
     </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="1305">
           <caret line="92" column="49" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testBuildCube.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
+        <state relative-caret-position="1560">
           <caret line="109" selection-start-line="109" selection-end-line="109" />
           <folding>
             <element signature="e#19#34#0" expanded="true" />
@@ -411,21 +463,24 @@
     <entry file="file://$PROJECT_DIR$/mysql.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testquery_old.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="3" column="11" selection-start-line="3" selection-end-line="4" />
+        <state relative-caret-position="571">
+          <caret line="124" column="30" selection-start-line="124" selection-start-column="14" selection-end-line="124" selection-end-column="30" />
+          <folding>
+            <element signature="e#19#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+        <state relative-caret-position="538">
+          <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>

@@ -63,7 +63,8 @@ class MyTest(unittest.TestCase):  # 继承unittest.TestCase
         sql = sql.format(namepro="testQuery1",request1=str(response.url),respons1=str(response.text),timestart = starttime,timeend = timeend,D_time = dtime,status = str(response.status_code))
         MyTest.cur.execute(sql)
         MyTest.conn.commit()
-        time.sleep(random.randint(6,60))
+        time.sleep(random.randint(1,6))
+        self.assertEqual(1,2)
 
     def testQuery2(self):
         query_url = MyTest.base_url + "/query"
@@ -79,7 +80,7 @@ class MyTest(unittest.TestCase):  # 继承unittest.TestCase
                          timeend=timeend, D_time=dtime, status=str(response.status_code))
         MyTest.cur.execute(sql)
         MyTest.conn.commit()
-        time.sleep(random.randint(6,60))
+        time.sleep(random.randint(1,6))
 
 
     def testQuery3(self):
@@ -96,7 +97,7 @@ class MyTest(unittest.TestCase):  # 继承unittest.TestCase
                          timeend=timeend, D_time=dtime, status=str(response.status_code))
         MyTest.cur.execute(sql)
         MyTest.conn.commit()
-        time.sleep(random.randint(6,60))
+        time.sleep(random.randint(1,6))
 
 
         # sql_files = glob.glob('sql/*.sql')
