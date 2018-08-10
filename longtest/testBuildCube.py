@@ -29,8 +29,7 @@ class testBuildCube(unittest.TestCase):
         pass
 
     def testBuild(self):
-        base_url = "http://localhost:7070/kylin/api"
-        url = base_url + "/cubes/kylin_sales_cube/rebuild"
+        base_url = "http://10.1.2.108:7070/kylin/api"
         headers = {
             'content-type': "application/json",
             'authorization': "Basic QURNSU46S1lMSU4=",
@@ -38,12 +37,18 @@ class testBuildCube(unittest.TestCase):
             'accept': "application/vnd.apache.kylin-v2+json"
         }
 
-        # reload metadata before build cubes
-        cache_response = requests.request("PUT", base_url + "/cache/all/all/update", headers=headers)
-        self.assertTrue(long(END_TIME) > long(START_TIME))
-        self.assertEqual(cache_response.status_code, 200, 'Metadata cache not refreshed.')
+        url = base_url + "/cubes/b/segments/build"
 
-        payload = "{\"startTime\": " + START_TIME + ", \"endTime\": " + END_TIME + ", \"buildType\":\"BUILD\"}"
+
+        # reload metadata before build cubes
+        # cache_response = requests.request("PUT", base_url + "/cache/all/all/update", headers=headers)
+        # self.assertTrue(long(END_TIME) > long(START_TIME))
+        # self.assertEqual(cache_response.status_code, 200, 'Metadata cache not refreshed.')
+
+        # payload = "{\"startTime\": " + START_TIME + ", \"endTime\": " + END_TIME + ", \"buildType\":\"BUILD\"}"
+        payload = '''{"buildType": "BUILD", "startTime": '''+str(time.time()*1000-648911117000)+''', "endTime": '''+str(time.time()*1000-648675779000)+''', "mpValues": "","project": "test256to310"}
+        '''
+
         status_code = 0
         try_time = 1
         while status_code != 200 and try_time <= 3:
@@ -73,7 +78,7 @@ class testBuildCube(unittest.TestCase):
             job_status = job_info['data']['job_status']
             try_time = 1
             total_try_time = 60
-            print 'Run mode: ' + RUN_MODE
+            print 'Run mode: ' + str(RUN_MODE)
             if RUN_MODE == '1':
                 total_try_time = 5
             while job_status in ('RUNNING', 'PENDING') and try_time <= total_try_time:
