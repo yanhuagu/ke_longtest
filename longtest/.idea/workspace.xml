@@ -17,7 +17,7 @@
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest_test_a_run.coverage" NAME="Unittests for test.MyTest.test_a_run Coverage Results" MODIFIED="1533626587123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest_testQuery1.coverage" NAME="Unittests for test.MyTest.testQuery1 Coverage Results" MODIFIED="1533633423968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$http.coverage" NAME="http Coverage Results" MODIFIED="1533625104839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/longtest$Unittests_in_testBuildCube_py.coverage" NAME="Unittests in longTest.py Coverage Results" MODIFIED="1533885209934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/longtest$Unittests_in_testBuildCube_py.coverage" NAME="Unittests in longTest.py Coverage Results" MODIFIED="1533891936251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest_test_b_run.coverage" NAME="Unittests for test.MyTest.test_b_run Coverage Results" MODIFIED="1533633571626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_query_MyTest.coverage" NAME="Unittests for test_query.MyTest Coverage Results" MODIFIED="1533727294449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_testBuildCube_testBuildCube.coverage" NAME="Unittests for testBuildCube.testBuildCube Coverage Results" MODIFIED="1533802362788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -39,8 +39,8 @@
       <file leaf-file-name="longTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/longTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="204" column="32" lean-forward="true" selection-start-line="204" selection-start-column="32" selection-end-line="204" selection-end-column="32" />
+            <state relative-caret-position="265">
+              <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
               <folding>
                 <element signature="e#43#64#0" expanded="true" />
               </folding>
@@ -64,7 +64,6 @@
       <find>payload</find>
       <find>requests</find>
       <find>cur</find>
-      <find>testQuery</find>
       <find>END_TIME</find>
       <find>failure</find>
       <find>killYarnApplications</find>
@@ -74,6 +73,8 @@
       <find>longTes</find>
       <find>START_TIME</find>
       <find>now</find>
+      <find>testQuery1</find>
+      <find>testQuery</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -278,12 +279,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_longTest_py - 2018.08.10 at 14h 02m 11s.xml">
-      <configuration name="Unittests in longTest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_longTest_py - 2018.08.10 at 14h 07m 59s.xml">
-      <configuration name="Unittests in longTest.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_longTest_longTest_testQuery - 2018.08.10 at 15h 05m 10s.xml">
       <configuration name="Unittests for longTest.longTest.testQuery" configurationId="tests" />
     </history-entry>
@@ -308,6 +303,12 @@
     <history-entry file="Unittests_in_longTest_py - 2018.08.10 at 15h 16m 52s.xml">
       <configuration name="Unittests in longTest.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_longTest_py - 2018.08.10 at 16h 44m 41s.xml">
+      <configuration name="Unittests in longTest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_longTest_py - 2018.08.10 at 17h 09m 14s.xml">
+      <configuration name="Unittests in longTest.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="54" width="1400" height="790" extended-state="0" />
@@ -316,7 +317,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16061452" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37430167" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
@@ -472,8 +473,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/longTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="204" column="32" lean-forward="true" selection-start-line="204" selection-start-column="32" selection-end-line="204" selection-end-column="32" />
+        <state relative-caret-position="265">
+          <caret line="218" lean-forward="true" selection-start-line="218" selection-end-line="218" />
           <folding>
             <element signature="e#43#64#0" expanded="true" />
           </folding>
