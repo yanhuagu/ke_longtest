@@ -207,7 +207,7 @@ if __name__ == '__main__':
     tests = [longTest("testQuery")]
 
     suite.addTests(tests)
-    filename = "/Users/yanhua.gu/work/code/ke_longtest/longtest/test_result.html"
+    filename = str(time.time())+"test_result.html"
     fp = open(filename, 'w')
     runner = HTMLTestRunner.HTMLTestRunner(
         stream=fp,
