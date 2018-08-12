@@ -13,4 +13,5 @@ from BeautifulReport import BeautifulReport
 if __name__ == '__main__':
     test_suite = unittest.defaultTestLoader.discover('tests/', pattern='test*.py')
     result = BeautifulReport(test_suite)
+    
     result.report(filename='Longtest Report', description='Longtest Report', log_path='.')
