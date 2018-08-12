@@ -18,7 +18,7 @@ def add_case(case_path=casepath, rule="test*.py"):
 def run_case(all_case):
     '''执行所有的用例, 并把结果写入测试报告'''
     result = BeautifulReport(all_case)
-    result.report(description='Longtest Report', log_path='.')
+    result.report(description='Longtest_Report', log_path='.')
 
 
 
