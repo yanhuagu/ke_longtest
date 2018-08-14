@@ -7,6 +7,8 @@
 @File: sample.py
 @License: MIT
 """
+from nose.plugins.plugintest import run_buffered as run
+
 import unittest
 from BeautifulReport import BeautifulReport
 
@@ -15,5 +17,5 @@ if __name__ == '__main__':
 
     result = BeautifulReport(test_suite)
     result.report(filename='Longtest Report', description='Longtest Report', log_path='.')
-
-
+    #
+    # run(test_suite)
