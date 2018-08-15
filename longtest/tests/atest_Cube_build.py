@@ -43,7 +43,7 @@ def enableCube(cubename):
 
 @ddt.ddt
 class cubeTest(unittest.TestCase):
-    base_url = "http://10.1.1.82:7070/kylin/api"
+    base_url = "http://10.1.1.83:7070/kylin/api"
     headers = {
         'content-type': "application/json",
         'authorization': "Basic QURNSU46S1lMSU4=",
@@ -85,7 +85,7 @@ class cubeTest(unittest.TestCase):
         starttime = datetime.now()
 
         url = cubeTest.base_url + "/cubes/b/segments/build"
-        payload = '''{"buildType": "BUILD", "startTime": '''+str(time.time()*1000-648911117000)+''', "endTime": '''+str(time.time()*1000-648675779000)+''', "mpValues": "","project": "test256to310"}
+        payload = '''{"buildType": "BUILD", "startTime": '''+str(time.time()*1000-694224000000)+''', "endTime": '''+str(time.time()*1000-694381945000)+''', "mpValues": "","project": "ssb"}
         '''
         status_code = 0
         try_time = 1

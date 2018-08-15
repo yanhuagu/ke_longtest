@@ -31,7 +31,7 @@ RUN_MODE = 0
 
 @ddt.ddt
 class pushdownTest(unittest.TestCase):
-    base_url = "http://10.1.2.108:7070/kylin/api"
+    base_url = "http://10.1.1.83:7070/kylin/api"
     headers = {
         'content-type': "application/json",
         'authorization': "Basic QURNSU46S1lMSU4=",
@@ -65,8 +65,8 @@ class pushdownTest(unittest.TestCase):
 
     # tpch_kap_24
     @ ddt.data(
-               ['''{"acceptPartial":true,"limit":50000,"offset":0,"project":"aaa","sql":"select   c_count,   count(*) as custdist from   (     select       c_custkey,       count(o_orderkey) as c_count     from       customer left outer join orders on         c_custkey = o_custkey         and o_comment not like '%unusual%accounts%'     group by       c_custkey   ) c_orders group by   c_count order by   custdist desc,   c_count desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],#Q13 hive可查
-               ['''{"acceptPartial":true,"limit":50000,"offset":0,"project":"aaa","sql":"with tmp1 as (     select p_partkey from part where p_name like 'forest%' ), tmp2 as (     select s_name, s_address, s_suppkey     from supplier, nation     where s_nationkey = n_nationkey     and n_name = 'CANADA' ), tmp3 as (     select l_partkey, 0.5 * sum(l_quantity) as sum_quantity, l_suppkey     from lineitem, tmp2     where l_shipdate >= '1994-01-01' and l_shipdate <= '1995-01-01'     and l_suppkey = s_suppkey      group by l_partkey, l_suppkey ), tmp4 as (     select ps_partkey, ps_suppkey, ps_availqty     from partsupp      where ps_partkey IN (select p_partkey from tmp1) ), tmp5 as ( select     ps_suppkey from     tmp4, tmp3 where     ps_partkey = l_partkey     and ps_suppkey = l_suppkey     and ps_availqty > sum_quantity ) select     s_name,     s_address from     supplier where     s_suppkey IN (select ps_suppkey from tmp5) order by s_name;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],# Q20
+               ['''{"acceptPartial":true,"limit":50000,"offset":0,"project":"tpch_kap_24","sql":"select   c_count,   count(*) as custdist from   (     select       c_custkey,       count(o_orderkey) as c_count     from       customer left outer join orders on         c_custkey = o_custkey         and o_comment not like '%unusual%accounts%'     group by       c_custkey   ) c_orders group by   c_count order by   custdist desc,   c_count desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],#Q13 hive可查
+               ['''{"acceptPartial":true,"limit":50000,"offset":0,"project":"tpch_kap_24","sql":"with tmp1 as (     select p_partkey from part where p_name like 'forest%' ), tmp2 as (     select s_name, s_address, s_suppkey     from supplier, nation     where s_nationkey = n_nationkey     and n_name = 'CANADA' ), tmp3 as (     select l_partkey, 0.5 * sum(l_quantity) as sum_quantity, l_suppkey     from lineitem, tmp2     where l_shipdate >= '1994-01-01' and l_shipdate <= '1995-01-01'     and l_suppkey = s_suppkey      group by l_partkey, l_suppkey ), tmp4 as (     select ps_partkey, ps_suppkey, ps_availqty     from partsupp      where ps_partkey IN (select p_partkey from tmp1) ), tmp5 as ( select     ps_suppkey from     tmp4, tmp3 where     ps_partkey = l_partkey     and ps_suppkey = l_suppkey     and ps_availqty > sum_quantity ) select     s_name,     s_address from     supplier where     s_suppkey IN (select ps_suppkey from tmp5) order by s_name;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],# Q20
 
                # ['''{"acceptPartial":true,"limit":50000,"offset":0,"project":"a","sql":"select * from KYLIN_ACCOUNT","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
                # [''''''],
