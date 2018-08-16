@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 
 #!/usr/bin/python
-import xmlrunner as xmlrunner
 
 from BeautifulReport import BeautifulReport
 
