@@ -5,6 +5,7 @@ from BeautifulReport import BeautifulReport
 
 import unittest
 from datetime import datetime
+from nose.plugins.plugintest import run_buffered as run
 
 import ddt as ddt
 import pymysql
@@ -19,14 +20,14 @@ END_TIME = 0
 # 0 -> normal run, 1 -> run to failure
 RUN_MODE = 0
 
-def killYarnApplications():
-    appListOutput = os.popen('yarn application -list')
-    for line in appListOutput.readlines():
-        for str in line.split():
-            if str.startswith('application_'):
-                os.popen('yarn application -kill ' + str)
-                print ('Kill app id: ' + str)
-    print ('Kill yarn app.')
+# def killYarnApplications():
+#     appListOutput = os.popen('yarn application -list')
+#     for line in appListOutput.readlines():
+#         for str in line.split():
+#             if str.startswith('application_'):
+#                 os.popen('yarn application -kill ' + str)
+#                 print ('Kill app id: ' + str)
+#     print ('Kill yarn app.')
 
 
 def disableCube(cubename):
@@ -43,7 +44,7 @@ def enableCube(cubename):
 
 @ddt.ddt
 class cubeTest(unittest.TestCase):
-    base_url = "http://10.1.1.83:7070/kylin/api"
+    base_url = "http://10.1.2.108:7070/kylin/api"
     headers = {
         'content-type': "application/json",
         'authorization': "Basic QURNSU46S1lMSU4=",
@@ -51,7 +52,7 @@ class cubeTest(unittest.TestCase):
         'accept': "application/vnd.apache.kylin-v2+json"
     }
 
-    conn = pymysql.connect(host='10.1.40.100', port=3306, user='root', passwd='root123', db='longtest')
+    conn = pymysql.connect(host='10.1.40.102', port=3306, user='root', passwd='root123', db='longtest')
     cur = conn.cursor()
 
     def tearDown(self):
@@ -84,9 +85,11 @@ class cubeTest(unittest.TestCase):
 
         starttime = datetime.now()
 
-        url = cubeTest.base_url + "/cubes/b/segments/build"
-        payload = '''{"buildType": "BUILD", "startTime": '''+str(time.time()*1000-694224000000)+''', "endTime": '''+str(time.time()*1000-694381945000)+''', "mpValues": "","project": "ssb"}
-        '''
+        url = cubeTest.base_url + "/cubes/kylin_sales_cube/segments/build"
+        # payload = '''{"buildType": "BUILD", "startTime": '''+str(time.time()*1000-694224000000)+''', "endTime": '''+str(time.time()*1000-694381945000)+''', "mpValues": "","project": "ssb"}
+        # '''
+        payload = '''{"buildType": "BUILD", "startTime": '''+str((int(round(time.time() * 1000))-209060570206))+''', "endTime": '''+str((int(round(time.time() * 1000))-208974170206))+''', "mpValues": "","project": "ssb"}'''
+
         status_code = 0
         try_time = 1
         while status_code != 200 and try_time <= 3:
@@ -137,7 +140,7 @@ class cubeTest(unittest.TestCase):
                     job_response = requests.request("GET", job_url, headers=cubeTest.headers)
                     job_info = json.loads(job_response.text)
                     job_status = job_info['data']['job_status']
-                    killYarnApplications()
+                    # killYarnApplications()
                 self.assertEquals(job_status, 'ERROR', 'Build cube failed, job status is ' + job_status)
             else:
                 self.assertEquals(job_status, 'FINISHED', 'Build cube failed, job status is ' + job_status)
@@ -152,5 +155,14 @@ class cubeTest(unittest.TestCase):
 
 
 
+
+
+if __name__ == '__main__':
+    test_suite = unittest.TestSuite()
+    test_suite.addTest(unittest.makeSuite(cubeTest))
+    run(test_suite)
+
+    # result = BeautifulReport(test_suite)
+    # result.report(filename='Longtest Report', description='Longtest Report', log_path='.')
 
 
