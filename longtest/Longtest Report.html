@@ -7104,40 +7104,16 @@ body.skin-3 {
 <script src="https://cdn.bootcss.com/chosen/1.8.2/chosen.jquery.js"></script>
 <script type="text/javascript">
     var resultData = {
-    "testPass": 10,
+    "testPass": 20,
     "testResult": [
         {
-            "className": "pushdownTest",
-            "methodName": "testPushdownQuery_1_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select___c_count____count____as_custdist_from_________select_______c_custkey________count_o_orderkey__as_c_count_____from_______customer_left_outer_join_orders_on_________c_custkey___o_custkey_________and_o_comment_not_like____unusual_accounts________group_by_______c_custkey_____c_orders_group_by___c_count_order_by___custdist_desc____c_count_desc____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "className": "queryTest",
+            "methodName": "testQuery_01_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_lstg_format_name__sum_price__as_GMV_from_kylin_sales_where_lstg_format_name___FP_GTC___group_by_lstg_format_name___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "2.48 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:27:38.242644' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Pushdown_query.py\", line 98, in testPushdownQuery\n    +' '+\"status_code = \"+str(response.status_code)+' '+'response = '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query payload = {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select   c_count,   count(*) as custdist from   (     select       c_custkey,       count(o_orderkey) as c_count     from       customer left outer join orders on         c_custkey = o_custkey         and o_comment not like '%unusual%accounts%'     group by       c_custkey   ) c_orders group by   c_count order by   custdist desc,   c_count desc;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} status_code = 200 response = {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Node [rel#10243:Subset#9.ENUMERABLE.[1 DESC, 0 DESC]] could not be implemented; planner state:  Root: rel#10243:Subset#9.ENUMERABLE.[1 DESC, 0 DESC] Original rel: LogicalSort(subset=[rel#10243:Subset#9.ENUMERABLE.[1 DESC, 0 DESC]], sort0=[$1], sort1=[$0], dir0=[DESC], dir1=[DESC], fetch=[50000]): rowcount = 3.75, cumulative cost = {39.652675199469584 rows, 3.75 cpu, 0.0 io}, id = 10233   LogicalAggregate(subset=[rel#10232:Subset#8.NONE.[]], group=[{0}], CUSTDIST=[COUNT()]): rowcount = 3.75, cumulative cost = {4.21875 rows, 0.0 cpu, 0.0 io}, id = 10231     LogicalProject(subset=[rel#10230:Subset#7.NONE.[]], C_COUNT=[$1]): rowcount = 37.5, cumulative cost = {37.5 rows, 37.5 cpu, 0.0 io}, id = 10229       LogicalAggregate(subset=[rel#10228:Subset#6.NONE.[]], group=[{0}], C_COUNT=[COUNT($1)]): rowcount = 37.5, cumulative cost = {42.1875 rows, 0.0 cpu, 0.0 io}, id = 10227         LogicalProject(subset=[rel#10226:Subset#5.NONE.[]], C_CUSTKEY=[$0], O_ORDERKEY=[$8]): rowcount = 375.0, cumulative cost = {375.0 rows, 750.0 cpu, 0.0 io}, id = 10225           LogicalProject(subset=[rel#10224:Subset#4.NONE.[]], C_CUSTKEY=[$0], C_NAME=[$1], C_ADDRESS=[$2], C_NATIONKEY=[$3], C_PHONE=[$4], C_ACCTBAL=[$5], C_MKTSEGMENT=[$6], C_COMMENT=[$7], O_ORDERKEY=[$8], O_CUSTKEY=[$9], O_ORDERSTATUS=[$10], O_TOTALPRICE=[$11], O_ORDERDATE=[$12], O_ORDERPRIORITY=[$13], O_CLERK=[$14], O_SHIPPRIORITY=[$15], O_COMMENT=[$16]): rowcount = 375.0, cumulative cost = {375.0 rows, 6375.0 cpu, 0.0 io}, id = 10223             LogicalJoin(subset=[rel#10222:Subset#3.NONE.[]], condition=[AND(=($0, $9), $17)], joinType=[left]): rowcount = 375.0, cumulative cost = {375.0 rows, 0.0 cpu, 0.0 io}, id = 10221               de(subset=[rel#10217:Subset#0.OLAP.[]], table=[[TPCH_FLAT_ORC_10, CUSTOMER]], ctx=[], fields=[[0, 1, 2, 3, 4, 5, 6, 7]]): rowcount = 100.0, cumulative cost = {5.0 rows, 5.050000000000001 cpu, 0.0 io}, id = 10186               LogicalProject(subset=[rel#10220:Subset#2.NONE.[]], O_ORDERKEY=[$0], O_CUSTKEY=[$1], O_ORDERSTATUS=[$2], O_TOTALPRICE=[$3], O_ORDERDATE=[$4], O_ORDERPRIORITY=[$5], O_CLERK=[$6], O_SHIPPRIORITY=[$7], O_COMMENT=[$8], $f9=[NOT(LIKE($8, '%unusual%accounts%'))]): rowcount = 100.0, cumulative cost = {100.0 rows, 1000.0 cpu, 0.0 io}, id = 10219                 de(subset=[rel#10218:Subset#1.OLAP.[]], table=[[TPCH_FLAT_ORC_10, ORDERS]], ctx=[], fields=[[0, 1, 2, 3, 4, 5, 6, 7, 8]]): rowcount = 100.0, cumulative cost = {5.0 rows, 5.050000000000001 cpu, 0.0 io}, id = 10187  Sets: Set#0, type: RecordType(BIGINT C_CUSTKEY, VARCHAR(256) C_NAME, VARCHAR(256) C_ADDRESS, BIGINT C_NATIONKEY, VARCHAR(256) C_PHONE, DOUBLE C_ACCTBAL, VARCHAR(256) C_MKTSEGMENT, VARCHAR(256) C_COMMENT)  rel#10217:Subset#0.OLAP.[], best=rel#10186, importance=0.4304672100000001   rel#10186:de.OLAP.[](table=[TPCH_FLAT_ORC_10, CUSTOMER],ctx=,fields=[0, 1, 2, 3, 4, 5, 6, 7]), rowcount=100.0, cumulative cost={5.0 rows, 5.050000000000001 cpu, 0.0 io}  rel#10289:Subset#0.ENUMERABLE.[], best=rel#10288, importance=0.21523360500000005   rel#10288:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10217:Subset#0.OLAP.[]), rowcount=100.0, cumulative cost={10.0 rows, 10.05 cpu, 0.0 io} Set#1, type: RecordType(BIGINT O_ORDERKEY, BIGINT O_CUSTKEY, VARCHAR(256) O_ORDERSTATUS, DOUBLE O_TOTALPRICE, VARCHAR(256) O_ORDERDATE, VARCHAR(256) O_ORDERPRIORITY, VARCHAR(256) O_CLERK, INTEGER O_SHIPPRIORITY, VARCHAR(256) O_COMMENT)  rel#10218:Subset#1.OLAP.[], best=rel#10187, importance=0.3874204890000001   rel#10187:de.OLAP.[](table=[TPCH_FLAT_ORC_10, ORDERS],ctx=,fields=[0, 1, 2, 3, 4, 5, 6, 7, 8]), rowcount=100.0, cumulative cost={5.0 rows, 5.050000000000001 cpu, 0.0 io}  rel#10296:Subset#1.ENUMERABLE.[], best=rel#10295, importance=0.19371024450000005   rel#10295:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10218:Subset#1.OLAP.[]), rowcount=100.0, cumulative cost={10.0 rows, 10.05 cpu, 0.0 io} Set#2, type: RecordType(BIGINT O_ORDERKEY, BIGINT O_CUSTKEY, VARCHAR(256) O_ORDERSTATUS, DOUBLE O_TOTALPRICE, VARCHAR(256) O_ORDERDATE, VARCHAR(256) O_ORDERPRIORITY, VARCHAR(256) O_CLERK, INTEGER O_SHIPPRIORITY, VARCHAR(256) O_COMMENT, BOOLEAN $f9)  rel#10220:Subset#2.NONE.[], best=null, importance=0.4304672100000001   rel#10219:LogicalProject.NONE.[](input=rel#10218:Subset#1.OLAP.[],O_ORDERKEY=$0,O_CUSTKEY=$1,O_ORDERSTATUS=$2,O_TOTALPRICE=$3,O_ORDERDATE=$4,O_ORDERPRIORITY=$5,O_CLERK=$6,O_SHIPPRIORITY=$7,O_COMMENT=$8,$f9=NOT(LIKE($8, '%unusual%accounts%'))), rowcount=100.0, cumulative cost={inf}  rel#10265:Subset#2.OLAP.[], best=rel#10267, importance=0.4286224125624553   rel#10267:db.OLAP.[](input=rel#10218:Subset#1.OLAP.[],O_ORDERKEY=$0,O_CUSTKEY=$1,O_ORDERSTATUS=$2,O_TOTALPRICE=$3,O_ORDERDATE=$4,O_ORDERPRIORITY=$5,O_CLERK=$6,O_SHIPPRIORITY=$7,O_COMMENT=$8,$f9=NOT(LIKE($8, '%unusual%accounts%')),ctx=), rowcount=100.0, cumulative cost={55.0 rows, 5.050000000000001 cpu, 0.0 io}  rel#10292:Subset#2.ENUMERABLE.[], best=rel#10291, importance=0.21523360500000005   rel#10291:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10265:Subset#2.OLAP.[]), rowcount=100.0, cumulative cost={60.0 rows, 10.05 cpu, 0.0 io} Set#3, type: RecordType(BIGINT C_CUSTKEY, VARCHAR(256) C_NAME, VARCHAR(256) C_ADDRESS, BIGINT C_NATIONKEY, VARCHAR(256) C_PHONE, DOUBLE C_ACCTBAL, VARCHAR(256) C_MKTSEGMENT, VARCHAR(256) C_COMMENT, BIGINT O_ORDERKEY, BIGINT O_CUSTKEY, VARCHAR(256) O_ORDERSTATUS, DOUBLE O_TOTALPRICE, VARCHAR(256) O_ORDERDATE, VARCHAR(256) O_ORDERPRIORITY, VARCHAR(256) O_CLERK, INTEGER O_SHIPPRIORITY, VARCHAR(256) O_COMMENT, BOOLEAN $f9)  rel#10222:Subset#3.NONE.[], best=null, importance=0.4782969000000001   rel#10221:LogicalJoin.NONE.[](left=rel#10217:Subset#0.OLAP.[],right=rel#10220:Subset#2.NONE.[],condition=AND(=($0, $9), $17),joinType=left), rowcount=375.0, cumulative cost={inf}  rel#10261:Subset#3.OLAP.[], best=null, importance=0.531441 Set#4, type: RecordType(BIGINT C_CUSTKEY, VARCHAR(256) C_NAME, VARCHAR(256) C_ADDRESS, BIGINT C_NATIONKEY, VARCHAR(256) C_PHONE, DOUBLE C_ACCTBAL, VARCHAR(256) C_MKTSEGMENT, VARCHAR(256) C_COMMENT, BIGINT O_ORDERKEY, BIGINT O_CUSTKEY, VARCHAR(256) O_ORDERSTATUS, DOUBLE O_TOTALPRICE, VARCHAR(256) O_ORDERDATE, VARCHAR(256) O_ORDERPRIORITY, VARCHAR(256) O_CLERK, INTEGER O_SHIPPRIORITY, VARCHAR(256) O_COMMENT)  rel#10224:Subset#4.NONE.[], best=null, importance=0.531441   rel#10223:LogicalProject.NONE.[](input=rel#10222:Subset#3.NONE.[],C_CUSTKEY=$0,C_NAME=$1,C_ADDRESS=$2,C_NATIONKEY=$3,C_PHONE=$4,C_ACCTBAL=$5,C_MKTSEGMENT=$6,C_COMMENT=$7,O_ORDERKEY=$8,O_CUSTKEY=$9,O_ORDERSTATUS=$10,O_TOTALPRICE=$11,O_ORDERDATE=$12,O_ORDERPRIORITY=$13,O_CLERK=$14,O_SHIPPRIORITY=$15,O_COMMENT=$16), rowcount=375.0, cumulative cost={inf}  rel#10263:Subset#4.OLAP.[], best=null, importance=0.4782969000000001   rel#10266:db.OLAP.[](input=rel#10261:Subset#3.OLAP.[],C_CUSTKEY=$0,C_NAME=$1,C_ADDRESS=$2,C_NATIONKEY=$3,C_PHONE=$4,C_ACCTBAL=$5,C_MKTSEGMENT=$6,C_COMMENT=$7,O_ORDERKEY=$8,O_CUSTKEY=$9,O_ORDERSTATUS=$10,O_TOTALPRICE=$11,O_ORDERDATE=$12,O_ORDERPRIORITY=$13,O_CLERK=$14,O_SHIPPRIORITY=$15,O_COMMENT=$16,ctx=), rowcount=375.0, cumulative cost={inf}  rel#10279:Subset#4.ENUMERABLE.[], best=null, importance=0.2657205   rel#10278:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10263:Subset#4.OLAP.[]), rowcount=375.0, cumulative cost={inf} Set#5, type: RecordType(BIGINT C_CUSTKEY, BIGINT O_ORDERKEY)  rel#10226:Subset#5.NONE.[], best=null, importance=0.5904900000000001   rel#10225:LogicalProject.NONE.[](input=rel#10224:Subset#4.NONE.[],C_CUSTKEY=$0,O_ORDERKEY=$8), rowcount=375.0, cumulative cost={inf}   rel#10260:LogicalProject.NONE.[](input=rel#10222:Subset#3.NONE.[],C_CUSTKEY=$0,O_ORDERKEY=$8), rowcount=375.0, cumulative cost={inf}   rel#10268:LogicalProject.NONE.[](input=rel#10261:Subset#3.OLAP.[],C_CUSTKEY=$0,O_ORDERKEY=$8), rowcount=375.0, cumulative cost={inf}  rel#10258:Subset#5.OLAP.[], best=null, importance=0.531441   rel#10262:db.OLAP.[](input=rel#10261:Subset#3.OLAP.[],C_CUSTKEY=$0,O_ORDERKEY=$8,ctx=), rowcount=375.0, cumulative cost={inf}   rel#10264:db.OLAP.[](input=rel#10263:Subset#4.OLAP.[],C_CUSTKEY=$0,O_ORDERKEY=$8,ctx=), rowcount=375.0, cumulative cost={inf}  rel#10285:Subset#5.ENUMERABLE.[], best=null, importance=0.29524500000000004   rel#10284:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10258:Subset#5.OLAP.[]), rowcount=375.0, cumulative cost={inf} Set#6, type: RecordType(BIGINT C_CUSTKEY, BIGINT C_COUNT)  rel#10228:Subset#6.NONE.[], best=null, importance=0.6561   rel#10227:LogicalAggregate.NONE.[](input=rel#10226:Subset#5.NONE.[],group={0},C_COUNT=COUNT($1)), rowcount=37.5, cumulative cost={inf}  rel#10256:Subset#6.OLAP.[], best=null, importance=0.5904900000000001   rel#10259:cw.OLAP.[](input=rel#10258:Subset#5.OLAP.[],group={0},C_COUNT=COUNT($1),ctx=), rowcount=37.5, cumulative cost={inf}  rel#10272:Subset#6.ENUMERABLE.[], best=null, importance=0.32805   rel#10271:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10256:Subset#6.OLAP.[]), rowcount=37.5, cumulative cost={inf} Set#7, type: RecordType(BIGINT C_COUNT)  rel#10230:Subset#7.NONE.[], best=null, importance=0.7290000000000001   rel#10229:LogicalProject.NONE.[](input=rel#10228:Subset#6.NONE.[],C_COUNT=$1), rowcount=37.5, cumulative cost={inf}  rel#10253:Subset#7.OLAP.[], best=null, importance=0.6561   rel#10257:db.OLAP.[](input=rel#10256:Subset#6.OLAP.[],C_COUNT=$1,ctx=), rowcount=37.5, cumulative cost={inf}  rel#10282:Subset#7.ENUMERABLE.[], best=null, importance=0.36450000000000005   rel#10281:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10253:Subset#7.OLAP.[]), rowcount=37.5, cumulative cost={inf} Set#8, type: RecordType(BIGINT C_COUNT, BIGINT CUSTDIST)  rel#10232:Subset#8.NONE.[], best=null, importance=0.81   rel#10231:LogicalAggregate.NONE.[](input=rel#10230:Subset#7.NONE.[],group={0},CUSTDIST=COUNT()), rowcount=3.75, cumulative cost={inf}   rel#10245:LogicalSort.NONE.[1 DESC, 0 DESC](input=rel#10232:Subset#8.NONE.[],sort0=$1,sort1=$0,dir0=DESC,dir1=DESC), rowcount=3.75, cumulative cost={inf}  rel#10255:Subset#8.OLAP.[], best=null, importance=0.7290000000000001   rel#10254:cw.OLAP.[](input=rel#10253:Subset#7.OLAP.[],group={0},CUSTDIST=COUNT(),ctx=), rowcount=3.75, cumulative cost={inf}   rel#10301:dd.OLAP.[1 DESC, 0 DESC](input=rel#10255:Subset#8.OLAP.[],sort0=$1,sort1=$0,dir0=DESC,dir1=DESC,ctx=), rowcount=3.75, cumulative cost={inf}  rel#10274:Subset#8.ENUMERABLE.[], best=null, importance=0.405   rel#10273:KapOLAPToEnumerableConverter.ENUMERABLE.[](input=rel#10255:Subset#8.OLAP.[]), rowcount=3.75, cumulative cost={inf}   rel#10303:KapOLAPToEnumerableConverter.ENUMERABLE.[1 DESC, 0 DESC](input=rel#10300:Subset#8.OLAP.[1 DESC, 0 DESC]), rowcount=3.75, cumulative cost={inf}  rel#10299:Subset#8.NONE.[1 DESC, 0 DESC], best=null, importance=0.405   rel#10245:LogicalSort.NONE.[1 DESC, 0 DESC](input=rel#10232:Subset#8.NONE.[],sort0=$1,sort1=$0,dir0=DESC,dir1=DESC), rowcount=3.75, cumulative cost={inf}  rel#10300:Subset#8.OLAP.[1 DESC, 0 DESC], best=null, importance=0.81   rel#10301:dd.OLAP.[1 DESC, 0 DESC](input=rel#10255:Subset#8.OLAP.[],sort0=$1,sort1=$0,dir0=DESC,dir1=DESC,ctx=), rowcount=3.75, cumulative cost={inf}  rel#10304:Subset#8.ENUMERABLE.[1 DESC, 0 DESC], best=null, importance=0.405   rel#10303:KapOLAPToEnumerableConverter.ENUMERABLE.[1 DESC, 0 DESC](input=rel#10300:Subset#8.OLAP.[1 DESC, 0 DESC]), rowcount=3.75, cumulative cost={inf} Set#9, type: RecordType(BIGINT C_COUNT, BIGINT CUSTDIST)  rel#10234:Subset#9.NONE.[1 DESC, 0 DESC], best=null, importance=0.9   rel#10233:LogicalSort.NONE.[1 DESC, 0 DESC](input=rel#10232:Subset#8.NONE.[],sort0=$1,sort1=$0,dir0=DESC,dir1=DESC,fetch=50000), rowcount=3.75, cumulative cost={inf}  rel#10243:Subset#9.ENUMERABLE.[1 DESC, 0 DESC], best=null, importance=1.0   rel#10244:AbstractConverter.ENUMERABLE.[1 DESC, 0 DESC](input=rel#10234:Subset#9.NONE.[1 DESC, 0 DESC],convention=ENUMERABLE,sort=[1 DESC, 0 DESC]), rowcount=3.75, cumulative cost={inf}   rel#10250:KapOLAPToEnumerableConverter.ENUMERABLE.[1 DESC, 0 DESC](input=rel#10249:Subset#9.OLAP.[1 DESC, 0 DESC]), rowcount=3.75, cumulative cost={inf}  rel#10249:Subset#9.OLAP.[1 DESC, 0 DESC], best=null, importance=0.9   rel#10248:da.OLAP.[1 DESC, 0 DESC](input=rel#10300:Subset#8.OLAP.[1 DESC, 0 DESC],ctx=,fetch=50000), rowcount=3.75, cumulative cost={inf} Please contact KAP technical support for more details. \",\"queryId\":\"6dd2051a-1846-4bdf-8d15-90dbb7cb56f0\",\"duration\":27,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "pushdownTest",
-            "methodName": "testPushdownQuery_2_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___with_tmp1_as_______select_p_partkey_from_part_where_p_name_like___forest_______tmp2_as_______select_s_name__s_address__s_suppkey_____from_supplier__nation_____where_s_nationkey___n_nationkey_____and_n_name_____CANADA______tmp3_as_______select_l_partkey__0_5___sum_l_quantity__as_sum_quantity__l_suppkey_____from_lineitem__tmp2_____where_l_shipdate______1994_01_01___and_l_shipdate______1995_01_01_______and_l_suppkey___s_suppkey______group_by_l_partkey__l_suppkey____tmp4_as_______select_ps_partkey__ps_suppkey__ps_availqty_____from_partsupp______where_ps_partkey_IN__select_p_partkey_from_tmp1_____tmp5_as___select_____ps_suppkey_from_____tmp4__tmp3_where_____ps_partkey___l_partkey_____and_ps_suppkey___l_suppkey_____and_ps_availqty___sum_quantity___select_____s_name______s_address_from_____supplier_where_____s_suppkey_IN__select_ps_suppkey_from_tmp5__order_by_s_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "1.93e+02 s",
+            "spendTime": "4.28 s",
             "status": "成功",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:30:48.150370' for column 'date' at row 1\")",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:14.937978' for column 'date' at row 1\")",
                 "  result = self._query(query)",
                 "<br></br>",
                 ""
@@ -7145,12 +7121,12 @@ body.skin-3 {
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_01_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__l_returnflag___l_linestatus___sum_l_quantity__as_sum_qty___sum_l_extendedprice__as_sum_base_price___sum_l_extendedprice____1___l_discount___as_sum_disc_price___sum_l_extendedprice____1___l_discount_____1___l_tax___as_sum_charge___avg_l_quantity__as_avg_qty___avg_l_extendedprice__as_avg_price___avg_l_discount__as_avg_disc__count____as_count_order_from_lineitem_where_l_shipdate______1998_09_16___group_by_l_returnflag__l_linestatus_order_by_l_returnflag_l_linestatus____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_02_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_sum_price__as_GMV__count_1__as_TRANS_CNT_from_kylin_sales___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "83.6 s",
+            "spendTime": "1.23 s",
             "status": "成功",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:32:12.859791' for column 'date' at row 1\")",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:19.231130' for column 'date' at row 1\")",
                 "  result = self._query(query)",
                 "<br></br>",
                 ""
@@ -7158,60 +7134,12 @@ body.skin-3 {
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_02_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__p_partkey_as_min_p_partkey___min_ps_supplycost__as_min_ps_supplycost_from__part___partsupp___supplier___nation___region_where__p_partkey___ps_partkey__and_s_suppkey___ps_suppkey__and_s_nationkey___n_nationkey__and_n_regionkey___r_regionkey__and_r_name_____EUROPE___group_by__p_partkey____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_03_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name__sum_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_group_by_kylin_sales_lstg_format_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "19.9 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:32:30.793807' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select  p_partkey as min_p_partkey,  min(ps_supplycost) as min_ps_supplycost from  part,  partsupp,  supplier,  nation,  region where  p_partkey = ps_partkey  and s_suppkey = ps_suppkey  and s_nationkey = n_nationkey  and n_regionkey = r_regionkey  and r_name = 'EUROPE' group by  p_partkey;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Job aborted due to stage failure: Task 2 in stage 133.0 failed 1 times, most recent failure: Lost task 2.0 in stage 133.0 (TID 382, sandbox.hortonworks.com, executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Container marked as failed: container_e37_1532934347443_0498_01_000002 on host: sandbox.hortonworks.com. Exit status: 134. Diagnostics: Exception from container-launch. Container id: container_e37_1532934347443_0498_01_000002 Exit code: 134 Exception message: /bin/bash: line 1:  9040 Aborted                 (core dumped) /usr/lib/jvm/java/bin/java -server -Xmx512m '-Dhdp.version=current' '-Dzipkin.collector-hostname=sandbox.hortonworks.com' '-Dzipkin.collector-port=9410' '-DinfluxDB.address=sandbox.hortonworks.com:8085' '-Dlog4j.configuration=spark-executor-log4j.properties' '-Dlog4j.debug' '-Dkap.spark.identifier=17029' '-Dkap.hdfs.working.dir=/kylin' '-Dkap.metadata.url=kylin_yanhua' '-XX:MaxDirectMemorySize=448M' -Djava.io.tmpdir=/hadoop/yarn/local/usercache/root/appcache/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/tmp '-Dspark.ui.port=4041' '-Dspark.driver.port=50308' -Dspark.yarn.app.container.log.dir=/hadoop/yarn/log/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002 -XX:OnOutOfMemoryError='kill %p' org.apache.spark.executor.CoarseGrainedExecutorBackend --driver-url spark://CoarseGrainedScheduler@10.1.2.108:50308 --executor-id 1 --hostname sandbox.hortonworks.com --cores 1 --app-id application_1532934347443_0498 --user-class-path file:/hadoop/yarn/local/usercache/root/appcache/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/__app__.jar --user-class-path file:/hadoop/yarn/local/usercache/root/appcache/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/kylin-storage-parquet-kap-3.1.0-Beta-080918.jar > /hadoop/yarn/log/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/stdout 2> /hadoop/yarn/log/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/stderr  Stack trace: ExitCodeException exitCode=134: /bin/bash: line 1:  9040 Aborted                 (core dumped) /usr/lib/jvm/java/bin/java -server -Xmx512m '-Dhdp.version=current' '-Dzipkin.collector-hostname=sandbox.hortonworks.com' '-Dzipkin.collector-port=9410' '-DinfluxDB.address=sandbox.hortonworks.com:8085' '-Dlog4j.configuration=spark-executor-log4j.properties' '-Dlog4j.debug' '-Dkap.spark.identifier=17029' '-Dkap.hdfs.working.dir=/kylin' '-Dkap.metadata.url=kylin_yanhua' '-XX:MaxDirectMemorySize=448M' -Djava.io.tmpdir=/hadoop/yarn/local/usercache/root/appcache/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/tmp '-Dspark.ui.port=4041' '-Dspark.driver.port=50308' -Dspark.yarn.app.container.log.dir=/hadoop/yarn/log/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002 -XX:OnOutOfMemoryError='kill %p' org.apache.spark.executor.CoarseGrainedExecutorBackend --driver-url spark://CoarseGrainedScheduler@10.1.2.108:50308 --executor-id 1 --hostname sandbox.hortonworks.com --cores 1 --app-id application_1532934347443_0498 --user-class-path file:/hadoop/yarn/local/usercache/root/appcache/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/__app__.jar --user-class-path file:/hadoop/yarn/local/usercache/root/appcache/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/kylin-storage-parquet-kap-3.1.0-Beta-080918.jar > /hadoop/yarn/log/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/stdout 2> /hadoop/yarn/log/application_1532934347443_0498/container_e37_1532934347443_0498_01_000002/stderr   at org.apache.hadoop.util.Shell.runCommand(Shell.java:576)  at org.apache.hadoop.util.Shell.run(Shell.java:487)  at org.apache.hadoop.util.Shell$ShellCommandExecutor.execute(Shell.java:753)  at org.apache.hadoop.yarn.server.nodemanager.DefaultContainerExecutor.launchContainer(DefaultContainerExecutor.java:212)  at org.apache.hadoop.yarn.server.nodemanager.containermanager.launcher.ContainerLaunch.call(ContainerLaunch.java:303)  at org.apache.hadoop.yarn.server.nodemanager.containermanager.launcher.ContainerLaunch.call(ContainerLaunch.java:82)  at java.util.concurrent.FutureTask.run(FutureTask.java:266)  at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)  at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)  at java.lang.Thread.run(Thread.java:748)   Container exited with a non-zero exit code 134  Driver stacktrace: Please contact KAP technical support for more details. \",\"queryId\":\"10d7c843-f273-4ba0-93fb-61fb89abbbeb\",\"duration\":14876,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_03_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql_____select__s_acctbal___s_name___n_name___p_partkey___p_mfgr___s_address___s_phone___s_comment_from__part___supplier___partsupp___nation___region___q2_min_ps_supplycost_where__p_partkey___ps_partkey__and_s_suppkey___ps_suppkey__and_p_size___37__and_p_type_like____COPPER____and_s_nationkey___n_nationkey__and_n_regionkey___r_regionkey__and_r_name_____EUROPE____and_ps_supplycost___min_ps_supplycost__and_p_partkey___min_p_partkey_order_by__s_acctbal_desc___n_name___s_name___p_partkey_limit_100____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "6.1 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:32:35.890235' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"  select  s_acctbal,  s_name,  n_name,  p_partkey,  p_mfgr,  s_address,  s_phone,  s_comment from  part,  supplier,  partsupp,  nation,  region,  q2_min_ps_supplycost where  p_partkey = ps_partkey  and s_suppkey = ps_suppkey  and p_size = 37  and p_type like '%COPPER'  and s_nationkey = n_nationkey  and n_regionkey = r_regionkey  and r_name = 'EUROPE'  and ps_supplycost = min_ps_supplycost  and p_partkey = min_p_partkey order by  s_acctbal desc,  n_name,  s_name,  p_partkey limit 100;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Table 'Q2_MIN_PS_SUPPLYCOST' not found. Please add table Q2_MIN_PS_SUPPLYCOST to data source. If this table does exist, mention it as DATABASE.TABLE. \",\"queryId\":\"d0837ea1-25eb-4193-bd52-03c90e23e1aa\",\"duration\":47,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_04_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__l_orderkey___sum_l_extendedprice____1___l_discount___as_revenue___o_orderdate___o_shippriority_from__customer___orders___lineitem_where__c_mktsegment_____BUILDING____and_c_custkey___o_custkey__and_l_orderkey___o_orderkey__and_o_orderdate_____1995_03_22____and_l_shipdate_____1995_03_22___group_by__l_orderkey___o_orderdate___o_shippriority_order_by__revenue_desc___o_orderdate_limit_10_____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "1.87e+02 s",
+            "spendTime": "6.27 s",
             "status": "成功",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:35:47.729274' for column 'date' at row 1\")",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:20.449470' for column 'date' at row 1\")",
                 "  result = self._query(query)",
                 "<br></br>",
                 ""
@@ -7219,180 +7147,12 @@ body.skin-3 {
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_05_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select____o_orderpriority_____count____as_order_count__from____orders_as_o__where____o_orderdate______1996_05_01______and_o_orderdate_____1996_08_01______and_exists________select_______________from________lineitem______where________l_orderkey___o_o_orderkey________and_l_commitdate___l_receiptdate_______group_by____o_orderpriority__order_by____o_orderpriority______backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_04_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name_sum_kylin_sales_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_group_by_kylin_sales_lstg_format_name_having_sum_price__5000___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "6.64 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:35:49.353044' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select    o_orderpriority,    count(*) as order_count  from    orders as o  where    o_orderdate >= '1996-05-01'    and o_orderdate < '1996-08-01'    and exists (      select        *      from        lineitem      where        l_orderkey = o.o_orderkey        and l_commitdate < l_receiptdate    )  group by    o_orderpriority  order by    o_orderpriority;  \",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Table or view not found: lineitem; line 1 pos 218 Please contact KAP technical support for more details. \",\"queryId\":\"b3d3d3cf-9570-4127-b730-1385490d0526\",\"duration\":480,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_06_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select_____name_____sum_l_extendedprice____1___l_discount___as_revenue__from____customer_____orders_____lineitem_____supplier_____nation_____region__where____c_custkey___o_custkey____and_l_orderkey___o_orderkey____and_l_suppkey___s_suppkey____and_c_nationkey___s_nationkey____and_s_nationkey___n_nationkey____and_n_regionkey___r_regionkey____and_r_name_____AFRICA______and_o_orderdate______1993_01_01______and_o_orderdate_____1994_01_01____group_by____n_name__order_by____revenue_desc______backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "4.23 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:35:55.534896' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select    _name,    sum(l_extendedprice * (1 - l_discount)) as revenue  from    customer,    orders,    lineitem,    supplier,    nation,    region  where    c_custkey = o_custkey    and l_orderkey = o_orderkey    and l_suppkey = s_suppkey    and c_nationkey = s_nationkey    and s_nationkey = n_nationkey    and n_regionkey = r_regionkey    and r_name = 'AFRICA'    and o_orderdate >= '1993-01-01'    and o_orderdate < '1994-01-01'  group by    n_name  order by    revenue desc;  \",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Column '_NAME' not found in any table. Please add column _NAME to data source. \",\"queryId\":\"7f728b32-2fa0-4be1-8023-e29f54b57c3b\",\"duration\":14,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_07_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select____tsum_l_extendedprice___l_discount__as_revenue__from____lineitem__where____l_shipdate______1993_01_01______and_l_shipdate_____1994_01_01______and_l_discount_between_0_06___0_01_and_0_06___0_01____and_l_quantity___25____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "4.12 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:35:59.696204' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select    tsum(l_extendedprice * l_discount) as revenue  from    lineitem  where    l_shipdate >= '1993-01-01'    and l_shipdate < '1994-01-01'    and l_discount between 0.06 - 0.01 and 0.06 + 0.01    and l_quantity < 25;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Syntax error:\\\"No match found for function signature TSUM(<NUMERIC>)\\\". Please correct the SQL. \",\"queryId\":\"6c85c739-7e5e-4340-82b8-e6176e2014fc\",\"duration\":14,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_08_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select____supp_nation_____cust_nation_____l_year_____sum_volume__as_revenue__from___________select________n1_n_name_as_supp_nation_________n2_n_name_as_cust_nation_________year_l_shipdate__as_l_year_________l_extendedprice____1___l_discount__as_volume______from________supplier_________lineitem_________orders_________customer_________nation_n1_________nation_n2______where________s_suppkey___l_suppkey________and_o_orderkey___l_orderkey________and_c_custkey___o_custkey________and_s_nationkey___n1_n_nationkey________and_c_nationkey___n2_n_nationkey________and_____________n1_n_name_____KENYA___and_n2_n_name_____PERU_____________or__n1_n_name_____PERU___and_n2_n_name_____KENYA____________________and_l_shipdate_between___1995_01_01___and___1996_12_31________as_shipping__group_by____supp_nation_____cust_nation_____l_year__order_by____supp_nation_____cust_nation_____l_year____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "6.2 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:36:03.852949' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select    supp_nation,    cust_nation,    l_year,    sum(volume) as revenue  from    (      select        n1.n_name as supp_nation,        n2.n_name as cust_nation,        year(l_shipdate) as l_year,        l_extendedprice * (1 - l_discount) as volume      from        supplier,        lineitem,        orders,        customer,        nation n1,        nation n2      where        s_suppkey = l_suppkey        and o_orderkey = l_orderkey        and c_custkey = o_custkey        and s_nationkey = n1.n_nationkey        and c_nationkey = n2.n_nationkey        and (          (n1.n_name = 'KENYA' and n2.n_name = 'PERU')          or (n1.n_name = 'PERU' and n2.n_name = 'KENYA')        )        and l_shipdate between '1995-01-01' and '1996-12-31'    ) as shipping  group by    supp_nation,    cust_nation,    l_year  order by    supp_nation,    cust_nation,    l_year;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Syntax error:\\\"Cannot apply 'EXTRACT' to arguments of type 'EXTRACT(<INTERVAL YEAR> FROM <VARCHAR(256)>)'. Supported form(s): 'EXTRACT(<DATETIME_INTERVAL> FROM <DATETIME_INTERVAL>)' 'EXTRACT(<DATETIME_INTERVAL> FROM <DATETIME>)'\\\". Please correct the SQL. \",\"queryId\":\"57e66ec3-7cca-4c00-9378-0e3de44a4961\",\"duration\":17,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_09_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select____o_year_____sum_case______when_nation_____PERU___then_volume______else_0____end____sum_volume__as_mkt_share__from___________select________year_o_orderdate__as_o_year_________l_extendedprice____1___l_discount__as_volume_________n2_n_name_as_nation______from________part_________supplier_________lineitem_________orders_________customer_________nation_n1_________nation_n2_________region______where________p_partkey___l_partkey________and_s_suppkey___l_suppkey________and_l_orderkey___o_orderkey________and_o_custkey___c_custkey________and_c_nationkey___n1_n_nationkey________and_n1_n_regionkey___r_regionkey________and_r_name_____AMERICA__________and_s_nationkey___n2_n_nationkey________and_o_orderdate_between___1995_01_01___and___1996_12_31__________and_p_type_____ECONOMY_BURNISHED_NICKEL________as_all_nations__group_by____o_year__order_by____o_year____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "3.13 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:36:10.027570' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select    o_year,    sum(case      when nation = 'PERU' then volume      else 0    end) / sum(volume) as mkt_share  from    (      select        year(o_orderdate) as o_year,        l_extendedprice * (1 - l_discount) as volume,        n2.n_name as nation      from        part,        supplier,        lineitem,        orders,        customer,        nation n1,        nation n2,        region      where        p_partkey = l_partkey        and s_suppkey = l_suppkey        and l_orderkey = o_orderkey        and o_custkey = c_custkey        and c_nationkey = n1.n_nationkey        and n1.n_regionkey = r_regionkey        and r_name = 'AMERICA'        and s_nationkey = n2.n_nationkey        and o_orderdate between '1995-01-01' and '1996-12-31'        and p_type = 'ECONOMY BURNISHED NICKEL'    ) as all_nations  group by    o_year  order by    o_year;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Syntax error:\\\"Cannot apply 'EXTRACT' to arguments of type 'EXTRACT(<INTERVAL YEAR> FROM <VARCHAR(256)>)'. Supported form(s): 'EXTRACT(<DATETIME_INTERVAL> FROM <DATETIME_INTERVAL>)' 'EXTRACT(<DATETIME_INTERVAL> FROM <DATETIME>)'\\\". Please correct the SQL. \",\"queryId\":\"dcddb59f-bb88-4599-a805-51c328551ecc\",\"duration\":19,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_10_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select____nation_____o_year_____sum_amount__as_sum_profit__from___________select________n_name_as_nation_________year_o_orderdate__as_o_year_________l_extendedprice____1___l_discount____ps_supplycost___l_quantity_as_amount______from________part_________supplier_________lineitem_________partsupp_________orders_________nation______where________s_suppkey___l_suppkey________and_ps_suppkey___l_suppkey________and_ps_partkey___l_partkey________and_p_partkey___l_partkey________and_o_orderkey___l_orderkey________and_s_nationkey___n_nationkey________and_p_name_like____plum_________as_profit__group_by____nation_____o_year__order_by____nation_____o_year_desc____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "3.08 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:36:13.129514' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select    nation,    o_year,    sum(amount) as sum_profit  from    (      select        n_name as nation,        year(o_orderdate) as o_year,        l_extendedprice * (1 - l_discount) - ps_supplycost * l_quantity as amount      from        part,        supplier,        lineitem,        partsupp,        orders,        nation      where        s_suppkey = l_suppkey        and ps_suppkey = l_suppkey        and ps_partkey = l_partkey        and p_partkey = l_partkey        and o_orderkey = l_orderkey        and s_nationkey = n_nationkey        and p_name like '%plum%'    ) as profit  group by    nation,    o_year  order by    nation,    o_year desc;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Syntax error:\\\"Cannot apply 'EXTRACT' to arguments of type 'EXTRACT(<INTERVAL YEAR> FROM <VARCHAR(256)>)'. Supported form(s): 'EXTRACT(<DATETIME_INTERVAL> FROM <DATETIME_INTERVAL>)' 'EXTRACT(<DATETIME_INTERVAL> FROM <DATETIME>)'\\\". Please correct the SQL. \",\"queryId\":\"7bd497f3-dd84-4a0d-8763-284bb7e7dd55\",\"duration\":15,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_11_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select____c_custkey_____c_name_____sum_l_extendedprice____1___l_discount___as_revenue_____c_acctbal_____n_name_____c_address_____c_phone_____c_comment__from____customer_____orders_____lineitem_____nation__where____c_custkey___o_custkey____and_l_orderkey___o_orderkey____and_o_orderdate______1993_07_01______and_o_orderdate_____1993_10_01______and_l_returnflag_____R______and_c_nationkey___n_nationkey__group_by____c_custkey_____c_name_____c_acctbal_____c_phone_____n_name_____c_address_____c_comment__order_by____revenue_desc__limit_20____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "1.2e+02 s",
-            "status": "失败",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:38:09.954651' for column 'date' at row 1\")\n  result = self._query(query)\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select    c_custkey,    c_name,    sum(l_extendedprice * (1 - l_discount)) as revenue,    c_acctbal,    n_name,    c_address,    c_phone,    c_comment  from    customer,    orders,    lineitem,    nation  where    c_custkey = o_custkey    and l_orderkey = o_orderkey    and o_orderdate >= '1993-07-01'    and o_orderdate < '1993-10-01'    and l_returnflag = 'R'    and c_nationkey = n_nationkey  group by    c_custkey,    c_name,    c_acctbal,    c_phone,    n_name,    c_address,    c_comment  order by    revenue desc  limit 20;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Job aborted due to stage failure: Task 0 in stage 157.0 failed 1 times, most recent failure: Lost task 0.0 in stage 157.0 (TID 479, sandbox.hortonworks.com, executor 2): ExecutorLostFailure (executor 2 exited caused by one of the running tasks) Reason: Container marked as failed: container_e37_1532934347443_0498_01_000003 on host: sandbox.hortonworks.com. Exit status: 143. Diagnostics: Container killed on request. Exit code is 143 Container exited with a non-zero exit code 143 Killed by external signal  Driver stacktrace: Please contact KAP technical support for more details. \",\"queryId\":\"c88612cf-cd93-4874-bd84-8af0bba0248b\",\"duration\":113670,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
-                "\nDuring handling of the above exception, another exception occurred:\n\n",
-                "Traceback (most recent call last):\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
-                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
-                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
-                "SystemExit: 0\n"
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_12_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__ps_partkey___sum_ps_supplycost___ps_availqty__as_part_value_from__partsupp___supplier___nation_where__ps_suppkey___s_suppkey__and_s_nationkey___n_nationkey__and_n_name_____GERMANY___group_by_ps_partkey_____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "35.8 s",
+            "spendTime": "2.27 s",
             "status": "成功",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:38:45.671516' for column 'date' at row 1\")",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:26.723711' for column 'date' at row 1\")",
                 "  result = self._query(query)",
                 "<br></br>",
                 ""
@@ -7400,99 +7160,73 @@ body.skin-3 {
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_13_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__ps_partkey__part_value_as_value_from____select___ps_partkey____part_value____total_value__from___q11_part_tmp_cached_join_q11_sum_tmp_cached___a_where__part_value___total_value___0_0001_order_by__value_desc____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_05_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name_sum_kylin_sales_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_where_kylin_sales_lstg_format_name_is_null_group_by_kylin_sales_lstg_format_name_having_sum_price__5000_and_count____72____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "1.24 s",
+            "spendTime": "1.3 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:29.054375' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_06_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_cal_dt_week_beg_dt_sum_kylin_sales_price__as_GMV____count____as_TRANS_CNT___sum_kylin_sales_item_count__as_total_items_from_kylin_sales__inner_JOIN_kylin_cal_dt_ON_kylin_sales_part_dt___kylin_cal_dt_cal_dt_inner_JOIN_kylin_category_groupings_ON_kylin_sales_leaf_categ_id___kylin_category_groupings_leaf_categ_id_AND_kylin_sales_lstg_site_id___kylin_category_groupings_site_id_where_kylin_sales_lstg_format_name___FP_GTC____and_kylin_cal_dt_week_beg_dt_between_DATE___2013_05_01___and_DATE___2013_08_01___group_by_kylin_cal_dt_week_beg_dt____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "1.25 s",
             "status": "失败",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:38:51.817846' for column 'date' at row 1\")\n  result = self._query(query)\n",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:30.245926' for column 'date' at row 1\")\n  result = self._query(query)\n",
                 "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 416, in __wrap\n    result = func(*args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 153, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select  ps_partkey, part_value as value from (  select   ps_partkey,   part_value,   total_value  from   q11_part_tmp_cached join q11_sum_tmp_cached ) a where  part_value > total_value * 0.0001 order by  value desc;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Failed to parse SQL,Encountered \\\"as value\\\" at line 1, column 32, please make sure the SQL is valid. Please contact KAP technical support for more details. \",\"queryId\":\"842ba2dc-c194-4dc6-ba01-7a3000add73e\",\"duration\":9,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
+                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":\"5\",\"offset\":0,\"project\":\"learn_kylin\",\"sql\":\"select kylin_cal_dt.week_beg_dt,sum(kylin_sales.price) as GMV  , count(*) as TRANS_CNT , sum(kylin_sales.item_count) as total_items from kylin_sales  inner JOIN kylin_cal_dt ON kylin_sales.part_dt = kylin_cal_dt.cal_dt inner JOIN kylin_category_groupings ON kylin_sales.leaf_categ_id = kylin_category_groupings.leaf_categ_id AND kylin_sales.lstg_site_id = kylin_category_groupings.site_id where kylin_sales.lstg_format_name='FP-GTC'  and kylin_cal_dt.week_beg_dt between DATE '2013-05-01' and DATE '2013-08-01' group by kylin_cal_dt.week_beg_dt;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Cannot call methods on a stopped SparkContext. This stopped SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204)  The currently active SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204) Please contact KAP technical support for more details. \",\"queryId\":\"b7d13ef9-0c3c-4eb9-b4ad-f4b21d95be52\",\"duration\":120,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"lateDecodeEnabled\":false,\"partial\":false,\"pushDown\":false,\"sparderUsed\":true,\"timeout\":false},\"msg\":\"\"}\n",
                 "\nDuring handling of the above exception, another exception occurred:\n\n",
                 "Traceback (most recent call last):\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
                 "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 423, in __wrap\n    sys.exit(0)\n",
                 "SystemExit: 0\n"
             ]
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_14_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__l_shipmode___sum_case___when_o_orderpriority_____1_URGENT______or_o_orderpriority_____2_HIGH______then_1___else_0__end__as_high_line_count___sum_case___when_o_orderpriority______1_URGENT______and_o_orderpriority______2_HIGH______then_1___else_0__end__as_low_line_count_from__orders___lineitem_where__o_orderkey___l_orderkey__and_l_shipmode_in____REG_AIR______MAIL_____and_l_commitdate___l_receiptdate__and_l_shipdate___l_commitdate__and_l_receiptdate______1995_01_01____and_l_receiptdate_____1996_01_01___group_by__l_shipmode_order_by__l_shipmode____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_07_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___SELECT__kylin_cal_dt_week_beg_dt___kylin_category_groupings_meta_categ_name___sum_price__as_GMV__count____as_TRANS_CNT___sum_kylin_sales_item_count__as_total_items_FROM_kylin_sales__inner_JOIN_kylin_cal_dt_ON_kylin_sales_part_dt___kylin_cal_dt_cal_dt_inner_JOIN_kylin_category_groupings_ON_kylin_sales_leaf_categ_id___kylin_category_groupings_leaf_categ_id_AND_kylin_sales_lstg_site_id___kylin_category_groupings_site_id_where_kylin_cal_dt_week_beg_dt_between_DATE___2013_09_01___and_DATE___2013_10_01____and_kylin_category_groupings_categ_lvl3_name___Other____group_by_kylin_cal_dt_week_beg_dt___kylin_category_groupings_meta_categ_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "98.1 s",
-            "status": "成功",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:40:29.033293' for column 'date' at row 1\")",
-                "  result = self._query(query)",
-                "<br></br>",
-                ""
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_15_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__100_00___sum_case___when_p_type_like___PROMO_______then_l_extendedprice____1___l_discount____else_0__end____sum_l_extendedprice____1___l_discount___as_promo_revenue_from__lineitem___part_where__l_partkey___p_partkey__and_l_shipdate______1995_08_01____and_l_shipdate_____1995_09_01______backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "79.6 s",
-            "status": "成功",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:41:47.661241' for column 'date' at row 1\")",
-                "  result = self._query(query)",
-                "<br></br>",
-                ""
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_16_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__l_suppkey_as_supplier_no___sum_l_extendedprice____1___l_discount___as_total_revenue_from__lineitem_where__l_shipdate______1996_01_01____and_l_shipdate_____1996_04_01___group_by_l_suppkey____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "51.0 s",
-            "status": "成功",
-            "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:42:36.598164' for column 'date' at row 1\")",
-                "  result = self._query(query)",
-                "<br></br>",
-                ""
-            ]
-        },
-        {
-            "className": "queryTest",
-            "methodName": "testQuery_17_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__p_brand___p_type___p_size___count_distinct_ps_suppkey__as_supplier_cnt_from__partsupp_left_join_part_on__p_partkey___ps_partkey__where_p_brand______Brand_34____and_p_type_not_like___ECONOMY_BRUSHED_____and_p_size_in__22__14__27__49__21__33__35__28___and_partsupp_ps_suppkey_not_in_____select____s_suppkey___from____supplier___where____s_comment_like____Customer_Complaints_______group_by__p_brand___p_type___p_size_order_by__supplier_cnt_desc___p_brand___p_type___p_size_limit_10____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
-            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "4.95 s",
+            "spendTime": "2.15 s",
             "status": "失败",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:42:42.573113' for column 'date' at row 1\")\n  result = self._query(query)\n",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:31.465404' for column 'date' at row 1\")\n  result = self._query(query)\n",
                 "Traceback (most recent call last):\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 418, in __wrap\n    result = func(*args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 107, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 416, in __wrap\n    result = func(*args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 153, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
-                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":50000,\"offset\":0,\"project\":\"aaa\",\"sql\":\"select  p_brand,  p_type,  p_size,  count(distinct ps_suppkey) as supplier_cnt from  partsupp left join part on  p_partkey = ps_partkey  where p_brand <> 'Brand#34'  and p_type not like 'ECONOMY BRUSHED%'  and p_size in (22, 14, 27, 49, 21, 33, 35, 28)  and partsupp.ps_suppkey not in (   select    s_suppkey   from    supplier   where    s_comment like '%Customer%Complaints%'  ) group by  p_brand,  p_type,  p_size order by  supplier_cnt desc,  p_brand,  p_type,  p_size limit 10;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Table or view not found: supplier; line 1 pos 353 Please contact KAP technical support for more details. \",\"queryId\":\"a4424c15-23fe-46e8-b991-ac3feafcabb6\",\"duration\":824,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"pushDown\":false,\"partial\":false,\"sparderUsed\":false,\"timeout\":false,\"lateDecodeEnabled\":false},\"msg\":\"\"}\n",
+                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":\"5\",\"offset\":0,\"project\":\"learn_kylin\",\"sql\":\"SELECT  kylin_cal_dt.week_beg_dt  ,kylin_category_groupings.meta_categ_name  ,sum(price) as GMV, count(*) as TRANS_CNT , sum(kylin_sales.item_count) as total_items FROM kylin_sales  inner JOIN kylin_cal_dt ON kylin_sales.part_dt = kylin_cal_dt.cal_dt inner JOIN kylin_category_groupings ON kylin_sales.leaf_categ_id = kylin_category_groupings.leaf_categ_id AND kylin_sales.lstg_site_id = kylin_category_groupings.site_id where kylin_cal_dt.week_beg_dt between DATE '2013-09-01' and DATE '2013-10-01'  and kylin_category_groupings.categ_lvl3_name='Other'  group by kylin_cal_dt.week_beg_dt  ,kylin_category_groupings.meta_categ_name;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Cannot call methods on a stopped SparkContext. This stopped SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204)  The currently active SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204) Please contact KAP technical support for more details. \",\"queryId\":\"7d6ec228-a4e3-4f37-8847-b230089f1639\",\"duration\":88,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"lateDecodeEnabled\":false,\"partial\":false,\"pushDown\":false,\"sparderUsed\":true,\"timeout\":false},\"msg\":\"\"}\n",
                 "\nDuring handling of the above exception, another exception occurred:\n\n",
                 "Traceback (most recent call last):\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
                 "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
                 "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
-                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 425, in __wrap\n    sys.exit(0)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 423, in __wrap\n    sys.exit(0)\n",
                 "SystemExit: 0\n"
             ]
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_18_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___with_q17_part_as_____select_p_partkey_from_part_where_____p_brand_____Brand_23_____and_p_container_____MED_BOX______q17_avg_as_____select_l_partkey_as_t_partkey__0_2___avg_l_quantity__as_t_avg_quantity___from_lineitem____where_l_partkey_IN__select_p_partkey_from_q17_part____group_by_l_partkey____q17_price_as_____select___l_quantity____l_partkey____l_extendedprice___from___lineitem___where___l_partkey_IN__select_p_partkey_from_q17_part____select_cast_sum_l_extendedprice____7_0_as_decimal_32_2___as_avg_yearly_from_q17_avg__q17_price_where__t_partkey___l_partkey_and_l_quantity___t_avg_quantity____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_08_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_count____as_cnt_from_kylin_sales_where_lstg_format_name____AAAA___and___BBBB____lstg_format_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "3.7e+02 s",
+            "spendTime": "4.26 s",
             "status": "成功",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:48:51.481752' for column 'date' at row 1\")",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:33.684553' for column 'date' at row 1\")",
                 "  result = self._query(query)",
                 "<br></br>",
                 ""
@@ -7500,12 +7234,12 @@ body.skin-3 {
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_19_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__l_orderkey___sum_l_quantity__as_t_sum_quantity_from__lineitem_where__l_orderkey_is_not_null_group_by__l_orderkey____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_09_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name__sum_price__as_GMV__count_seller_id__as_TRANS_CNT__from_kylin_sales_where_kylin_sales_lstg_format_name_____AB____group_by_kylin_sales_lstg_format_name_having_count_seller_id____2____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "2.02e+02 s",
+            "spendTime": "5.39 s",
             "status": "成功",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:52:13.254227' for column 'date' at row 1\")",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:38.080374' for column 'date' at row 1\")",
                 "  result = self._query(query)",
                 "<br></br>",
                 ""
@@ -7513,12 +7247,264 @@ body.skin-3 {
         },
         {
             "className": "queryTest",
-            "methodName": "testQuery_20_____acceptPartial__true__limit__50000__offset__0__project___aaa___sql___select__sum_l_extendedprice___1___l_discount___as_revenue_from__lineitem_left_join_part_on__p_partkey___l_partkey___where__p_brand_____Brand_32_____and_p_container_in____SM_CASE______SM_BOX______SM_PACK______SM_PKG______and_l_quantity____7_and_l_quantity____7___10___and_p_size_between_1_and_5___and_l_shipmode_in____AIR______AIR_REG______and_l_shipinstruct_____DELIVER_IN_PERSON___limit_10____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "methodName": "testQuery_10_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_lstg_format_name__sum_price__as_GMV_from_kylin_sales_where_lstg_format_name___FP_GTC___group_by_lstg_format_name___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
             "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
-            "spendTime": "69.5 s",
+            "spendTime": "3.26 s",
             "status": "成功",
             "log": [
-                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-14 11:53:27.054475' for column 'date' at row 1\")",
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:43.338673' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_11_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_sum_price__as_GMV__count_1__as_TRANS_CNT_from_kylin_sales___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "6.29 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:46.610699' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_12_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name__sum_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_group_by_kylin_sales_lstg_format_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "1.4 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:53.014062' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_13_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name_sum_kylin_sales_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_group_by_kylin_sales_lstg_format_name_having_sum_price__5000___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "3.29 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:54.312150' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_14_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name_sum_kylin_sales_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_where_kylin_sales_lstg_format_name_is_null_group_by_kylin_sales_lstg_format_name_having_sum_price__5000_and_count____72____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "4.25 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:08:57.610347' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_15_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_cal_dt_week_beg_dt_sum_kylin_sales_price__as_GMV____count____as_TRANS_CNT___sum_kylin_sales_item_count__as_total_items_from_kylin_sales__inner_JOIN_kylin_cal_dt_ON_kylin_sales_part_dt___kylin_cal_dt_cal_dt_inner_JOIN_kylin_category_groupings_ON_kylin_sales_leaf_categ_id___kylin_category_groupings_leaf_categ_id_AND_kylin_sales_lstg_site_id___kylin_category_groupings_site_id_where_kylin_sales_lstg_format_name___FP_GTC____and_kylin_cal_dt_week_beg_dt_between_DATE___2013_05_01___and_DATE___2013_08_01___group_by_kylin_cal_dt_week_beg_dt____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "3.15 s",
+            "status": "失败",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:01.761271' for column 'date' at row 1\")\n  result = self._query(query)\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 416, in __wrap\n    result = func(*args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 153, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
+                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":\"5\",\"offset\":0,\"project\":\"learn_kylin\",\"sql\":\"select kylin_cal_dt.week_beg_dt,sum(kylin_sales.price) as GMV  , count(*) as TRANS_CNT , sum(kylin_sales.item_count) as total_items from kylin_sales  inner JOIN kylin_cal_dt ON kylin_sales.part_dt = kylin_cal_dt.cal_dt inner JOIN kylin_category_groupings ON kylin_sales.leaf_categ_id = kylin_category_groupings.leaf_categ_id AND kylin_sales.lstg_site_id = kylin_category_groupings.site_id where kylin_sales.lstg_format_name='FP-GTC'  and kylin_cal_dt.week_beg_dt between DATE '2013-05-01' and DATE '2013-08-01' group by kylin_cal_dt.week_beg_dt;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Cannot call methods on a stopped SparkContext. This stopped SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204)  The currently active SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204) Please contact KAP technical support for more details. \",\"queryId\":\"27ef4b11-a75f-4e23-8ca3-fc5ffa3509be\",\"duration\":89,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"lateDecodeEnabled\":false,\"partial\":false,\"pushDown\":false,\"sparderUsed\":true,\"timeout\":false},\"msg\":\"\"}\n",
+                "\nDuring handling of the above exception, another exception occurred:\n\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
+                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 423, in __wrap\n    sys.exit(0)\n",
+                "SystemExit: 0\n"
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_16_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___SELECT__kylin_cal_dt_week_beg_dt___kylin_category_groupings_meta_categ_name___sum_price__as_GMV__count____as_TRANS_CNT___sum_kylin_sales_item_count__as_total_items_FROM_kylin_sales__inner_JOIN_kylin_cal_dt_ON_kylin_sales_part_dt___kylin_cal_dt_cal_dt_inner_JOIN_kylin_category_groupings_ON_kylin_sales_leaf_categ_id___kylin_category_groupings_leaf_categ_id_AND_kylin_sales_lstg_site_id___kylin_category_groupings_site_id_where_kylin_cal_dt_week_beg_dt_between_DATE___2013_09_01___and_DATE___2013_10_01____and_kylin_category_groupings_categ_lvl3_name___Other____group_by_kylin_cal_dt_week_beg_dt___kylin_category_groupings_meta_categ_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "3.17 s",
+            "status": "失败",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:04.906585' for column 'date' at row 1\")\n  result = self._query(query)\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 416, in __wrap\n    result = func(*args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 153, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
+                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":\"5\",\"offset\":0,\"project\":\"learn_kylin\",\"sql\":\"SELECT  kylin_cal_dt.week_beg_dt  ,kylin_category_groupings.meta_categ_name  ,sum(price) as GMV, count(*) as TRANS_CNT , sum(kylin_sales.item_count) as total_items FROM kylin_sales  inner JOIN kylin_cal_dt ON kylin_sales.part_dt = kylin_cal_dt.cal_dt inner JOIN kylin_category_groupings ON kylin_sales.leaf_categ_id = kylin_category_groupings.leaf_categ_id AND kylin_sales.lstg_site_id = kylin_category_groupings.site_id where kylin_cal_dt.week_beg_dt between DATE '2013-09-01' and DATE '2013-10-01'  and kylin_category_groupings.categ_lvl3_name='Other'  group by kylin_cal_dt.week_beg_dt  ,kylin_category_groupings.meta_categ_name;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Cannot call methods on a stopped SparkContext. This stopped SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204)  The currently active SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204) Please contact KAP technical support for more details. \",\"queryId\":\"ac2b1cf3-ad16-4700-aca3-647de0d42570\",\"duration\":89,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"lateDecodeEnabled\":false,\"partial\":false,\"pushDown\":false,\"sparderUsed\":true,\"timeout\":false},\"msg\":\"\"}\n",
+                "\nDuring handling of the above exception, another exception occurred:\n\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
+                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 423, in __wrap\n    sys.exit(0)\n",
+                "SystemExit: 0\n"
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_17_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_count____as_cnt_from_kylin_sales_where_lstg_format_name____AAAA___and___BBBB____lstg_format_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "1.28 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:08.178081' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_18_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name__sum_price__as_GMV__count_seller_id__as_TRANS_CNT__from_kylin_sales_where_kylin_sales_lstg_format_name_____AB____group_by_kylin_sales_lstg_format_name_having_count_seller_id____2____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "3.32 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:09.482943' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_19_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_lstg_format_name__sum_price__as_GMV_from_kylin_sales_where_lstg_format_name___FP_GTC___group_by_lstg_format_name___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "3.3 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:12.758307' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_20_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_sum_price__as_GMV__count_1__as_TRANS_CNT_from_kylin_sales___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "5.24 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:16.061118' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_21_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name__sum_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_group_by_kylin_sales_lstg_format_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "2.29 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:21.294285' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_22_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name_sum_kylin_sales_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_group_by_kylin_sales_lstg_format_name_having_sum_price__5000___backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "1.32 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:23.606740' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_23_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_sales_lstg_format_name_sum_kylin_sales_price__as_GMV__count____as_TRANS_CNT_from_kylin_sales_where_kylin_sales_lstg_format_name_is_null_group_by_kylin_sales_lstg_format_name_having_sum_price__5000_and_count____72____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "5.31 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:24.963692' for column 'date' at row 1\")",
+                "  result = self._query(query)",
+                "<br></br>",
+                ""
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_24_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_kylin_cal_dt_week_beg_dt_sum_kylin_sales_price__as_GMV____count____as_TRANS_CNT___sum_kylin_sales_item_count__as_total_items_from_kylin_sales__inner_JOIN_kylin_cal_dt_ON_kylin_sales_part_dt___kylin_cal_dt_cal_dt_inner_JOIN_kylin_category_groupings_ON_kylin_sales_leaf_categ_id___kylin_category_groupings_leaf_categ_id_AND_kylin_sales_lstg_site_id___kylin_category_groupings_site_id_where_kylin_sales_lstg_format_name___FP_GTC____and_kylin_cal_dt_week_beg_dt_between_DATE___2013_05_01___and_DATE___2013_08_01___group_by_kylin_cal_dt_week_beg_dt____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "3.16 s",
+            "status": "失败",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:30.135258' for column 'date' at row 1\")\n  result = self._query(query)\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 416, in __wrap\n    result = func(*args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 153, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
+                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":\"5\",\"offset\":0,\"project\":\"learn_kylin\",\"sql\":\"select kylin_cal_dt.week_beg_dt,sum(kylin_sales.price) as GMV  , count(*) as TRANS_CNT , sum(kylin_sales.item_count) as total_items from kylin_sales  inner JOIN kylin_cal_dt ON kylin_sales.part_dt = kylin_cal_dt.cal_dt inner JOIN kylin_category_groupings ON kylin_sales.leaf_categ_id = kylin_category_groupings.leaf_categ_id AND kylin_sales.lstg_site_id = kylin_category_groupings.site_id where kylin_sales.lstg_format_name='FP-GTC'  and kylin_cal_dt.week_beg_dt between DATE '2013-05-01' and DATE '2013-08-01' group by kylin_cal_dt.week_beg_dt;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Cannot call methods on a stopped SparkContext. This stopped SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204)  The currently active SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204) Please contact KAP technical support for more details. \",\"queryId\":\"512ee905-8b94-4885-9ae1-1685c555d8d2\",\"duration\":102,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"lateDecodeEnabled\":false,\"partial\":false,\"pushDown\":false,\"sparderUsed\":true,\"timeout\":false},\"msg\":\"\"}\n",
+                "\nDuring handling of the above exception, another exception occurred:\n\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
+                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 423, in __wrap\n    sys.exit(0)\n",
+                "SystemExit: 0\n"
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_25_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___SELECT__kylin_cal_dt_week_beg_dt___kylin_category_groupings_meta_categ_name___sum_price__as_GMV__count____as_TRANS_CNT___sum_kylin_sales_item_count__as_total_items_FROM_kylin_sales__inner_JOIN_kylin_cal_dt_ON_kylin_sales_part_dt___kylin_cal_dt_cal_dt_inner_JOIN_kylin_category_groupings_ON_kylin_sales_leaf_categ_id___kylin_category_groupings_leaf_categ_id_AND_kylin_sales_lstg_site_id___kylin_category_groupings_site_id_where_kylin_cal_dt_week_beg_dt_between_DATE___2013_09_01___and_DATE___2013_10_01____and_kylin_category_groupings_categ_lvl3_name___Other____group_by_kylin_cal_dt_week_beg_dt___kylin_category_groupings_meta_categ_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "4.15 s",
+            "status": "失败",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:33.282261' for column 'date' at row 1\")\n  result = self._query(query)\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 416, in __wrap\n    result = func(*args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/tests/test_Query.py\", line 153, in testQuery\n    +' '+\"********  status_code  ******** \"+str(response.status_code)+' '+'********  response  ********  '+str(response.text)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 821, in assertEqual\n    assertion_func(first, second, msg=msg)\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 1194, in assertMultiLineEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 666, in fail\n    raise self.failureException(msg)\n",
+                "AssertionError: '999' != '000'\n- 999\n+ 000\n : uri = http://10.1.2.108:7070/kylin/api/query ********  payload  ********  {\"acceptPartial\":true,\"limit\":\"5\",\"offset\":0,\"project\":\"learn_kylin\",\"sql\":\"SELECT  kylin_cal_dt.week_beg_dt  ,kylin_category_groupings.meta_categ_name  ,sum(price) as GMV, count(*) as TRANS_CNT , sum(kylin_sales.item_count) as total_items FROM kylin_sales  inner JOIN kylin_cal_dt ON kylin_sales.part_dt = kylin_cal_dt.cal_dt inner JOIN kylin_category_groupings ON kylin_sales.leaf_categ_id = kylin_category_groupings.leaf_categ_id AND kylin_sales.lstg_site_id = kylin_category_groupings.site_id where kylin_cal_dt.week_beg_dt between DATE '2013-09-01' and DATE '2013-10-01'  and kylin_category_groupings.categ_lvl3_name='Other'  group by kylin_cal_dt.week_beg_dt  ,kylin_category_groupings.meta_categ_name;\",\"backdoorToggles\":{\"DEBUG_TOGGLE_HTRACE_ENABLED\":false}} ********  status_code  ******** 200 ********  response  ********  {\"code\":\"999\",\"data\":{\"columnMetas\":null,\"results\":null,\"cube\":null,\"affectedRowCount\":0,\"isException\":true,\"exceptionMessage\":\"Something went wrong. Cannot call methods on a stopped SparkContext. This stopped SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204)  The currently active SparkContext was created at:  org.apache.spark.sql.SparderEnv$.getSparkSession(SourceFile:48) io.kyligence.kap.storage.parquet.cube.spark.rpcfree.ParquetTasks.<init>(SourceFile:99) io.kyligence.jd.a(SourceFile:57) io.kyligence.kap.storage.parquet.cube.CubeSparkRPC.getGTScanner(SourceFile:254) org.apache.kylin.storage.gtrecord.ScannerWorker.<init>(ScannerWorker.java:62) org.apache.kylin.storage.gtrecord.CubeSegmentScanner.<init>(CubeSegmentScanner.java:83) org.apache.kylin.storage.gtrecord.GTCubeStorageQueryBase.search(GTCubeStorageQueryBase.java:96) io.kyligence.ix.search(SourceFile:48) org.apache.kylin.query.enumerator.OLAPEnumerator.queryStorage(OLAPEnumerator.java:126) org.apache.kylin.query.enumerator.OLAPEnumerator.moveNext(OLAPEnumerator.java:70) Baz$1$1.moveNext(Unknown Source) org.apache.calcite.linq4j.EnumerableDefaults.groupBy_(EnumerableDefaults.java:826) org.apache.calcite.linq4j.EnumerableDefaults.groupBy(EnumerableDefaults.java:761) org.apache.calcite.linq4j.DefaultEnumerable.groupBy(DefaultEnumerable.java:302) Baz.bind(Unknown Source) org.apache.calcite.jdbc.CalcitePrepare$CalciteSignature.enumerable(CalcitePrepare.java:335) org.apache.calcite.jdbc.CalciteConnectionImpl.enumerable(CalciteConnectionImpl.java:294) org.apache.calcite.jdbc.CalciteMetaImpl._createIterable(CalciteMetaImpl.java:559) org.apache.calcite.jdbc.CalciteMetaImpl.createIterable(CalciteMetaImpl.java:550) org.apache.calcite.avatica.AvaticaResultSet.execute(AvaticaResultSet.java:204) Please contact KAP technical support for more details. \",\"queryId\":\"c09ca4c5-9d40-405f-b22d-82371379f804\",\"duration\":89,\"totalScanCount\":0,\"totalScanBytes\":0,\"hitExceptionCache\":false,\"storageCacheUsed\":false,\"traceUrl\":null,\"server\":\"sandbox.hortonworks.com:7070\",\"suiteId\":null,\"lateDecodeEnabled\":false,\"partial\":false,\"pushDown\":false,\"sparderUsed\":true,\"timeout\":false},\"msg\":\"\"}\n",
+                "\nDuring handling of the above exception, another exception occurred:\n\n",
+                "Traceback (most recent call last):\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 59, in testPartExecutor\n    yield\n",
+                "  File \"/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/case.py\", line 601, in run\n    testMethod()\n",
+                "  File \"/Users/yanhua.gu/longtest/lib/python3.6/site-packages/ddt.py\", line 145, in wrapper\n    return func(self, *args, **kwargs)\n",
+                "  File \"/Users/yanhua.gu/work/code/ke_longtest/longtest/BeautifulReport/BeautifulReport.py\", line 423, in __wrap\n    sys.exit(0)\n",
+                "SystemExit: 0\n"
+            ]
+        },
+        {
+            "className": "queryTest",
+            "methodName": "testQuery_26_____acceptPartial__true__limit___5___offset__0__project___learn_kylin___sql___select_count____as_cnt_from_kylin_sales_where_lstg_format_name____AAAA___and___BBBB____lstg_format_name____backdoorToggles____DEBUG_TOGGLE_HTRACE_ENABLED__false____",
+            "description": "list() -> new empty list\nlist(iterable) -> new list initialized from iterable's items",
+            "spendTime": "1.28 s",
+            "status": "成功",
+            "log": [
+                "/Users/yanhua.gu/longtest/lib/python3.6/site-packages/pymysql/cursors.py:170: Warning: (1292, \"Incorrect date value: '2018-08-19 22:09:37.511443' for column 'date' at row 1\")",
                 "  result = self._query(query)",
                 "<br></br>",
                 ""
@@ -7526,10 +7512,10 @@ body.skin-3 {
         }
     ],
     "testName": "Longtest Report",
-    "testAll": 22,
-    "testFail": 12,
-    "beginTime": "2018-08-14 11:27:36",
-    "totalTime": "1552s",
+    "testAll": 26,
+    "testFail": 6,
+    "beginTime": "2018-08-19 22:08:14",
+    "totalTime": "84s",
     "testSkip": 0,
     "testError": 0
 };

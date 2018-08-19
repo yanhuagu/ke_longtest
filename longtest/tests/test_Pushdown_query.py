@@ -108,6 +108,9 @@ class pushdownTest(unittest.TestCase):
     @BeautifulReport.add_test_img('bbbb')
 
     def testPushdownQuery(self,payload):
+        """
+            pushdown query test
+        """
 
         query_url = pushdownTest.base_url + "/query"
         starttime = datetime.now()

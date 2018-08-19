@@ -127,7 +127,10 @@ class queryTest(unittest.TestCase):
     @ ddt.unpack
     @BeautifulReport.add_test_img('aaaa')
 
-    def testQuery(self,payload):
+    def testCubeQuery(self,payload):
+        """
+            testQuery
+        """
         query_url = queryTest.base_url + "/query"
         starttime = datetime.now()
         response = requests.request("POST", query_url, data=payload, headers=queryTest.headers)

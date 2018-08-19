@@ -81,18 +81,20 @@ class cubeTest(unittest.TestCase):
 
     @BeautifulReport.add_test_img('bbbb')
 
-    def testBuild(self):
-
+    def testCubeBuild(self):
+        """
+            每天build一天的segment range为一天
+        """
         starttime = datetime.now()
 
         url = cubeTest.base_url + "/cubes/kylin_sales_cube/segments/build"
         # payload = '''{"buildType": "BUILD", "startTime": '''+str(time.time()*1000-694224000000)+''', "endTime": '''+str(time.time()*1000-694381945000)+''', "mpValues": "","project": "ssb"}
         # '''
-        payload = '''{"buildType": "BUILD", "startTime": '''+str((int(round(time.time() * 1000))-209060570206))+''', "endTime": '''+str((int(round(time.time() * 1000))-208974170206))+''', "mpValues": "","project": "ssb"}'''
+        payload = '''{"buildType": "BUILD", "startTime": '''+str((int(round(time.time() * 1000))-209060570206))+''', "endTime": '''+str((int(round(time.time() * 1000))-208974170206))+''', "mpValues": "","project": "learn_kylin"}'''
 
         status_code = 0
         try_time = 1
-        while status_code != 200 and try_time <= 3:
+        while status_code != 200 and try_time <= 1:
             print ('Submit build job, try_time = ' + str(try_time))
             try:
                 response = requests.request("PUT", url, data=payload, headers=cubeTest.headers)
@@ -104,7 +106,9 @@ class cubeTest(unittest.TestCase):
                 time.sleep(60)
                 try_time += 1
 
-        self.assertEqual(status_code, 200, 'Build job submitted failed.')
+        self.assertEqual(status_code, 200, 'Build job submitted failed.'+"uri = "+response.url+' '+"********  payload  ********  " + str(payload)
+                         +' '+"********  status_code  ******** "+str(response.status_code)+' '+'********  response  ********  '+str(response.text)
+                         )
 
         if status_code == 200:
             # print 'Build job is submitted...'
@@ -113,7 +117,9 @@ class cubeTest(unittest.TestCase):
             job_url = cubeTest.base_url + "/jobs/" + job_uuid
             job_response = requests.request("GET", job_url, headers=cubeTest.headers)
 
-            self.assertEqual(job_response.status_code, 200, 'Build job information fetched failed.')
+            self.assertEqual(job_response.status_code, 200, 'Build job information fetched failed.'+"uri = "+response.url+' '+"********  payload  ********  " + str(payload)
+                         +' '+"********  status_code  ******** "+str(response.status_code)+' '+'********  response  ********  '+str(response.text)
+                         )
 
             job_info = json.loads(job_response.text)
             job_status = job_info['data']['job_status']
@@ -141,9 +147,13 @@ class cubeTest(unittest.TestCase):
                     job_info = json.loads(job_response.text)
                     job_status = job_info['data']['job_status']
                     # killYarnApplications()
-                self.assertEquals(job_status, 'ERROR', 'Build cube failed, job status is ' + job_status)
+                self.assertEquals(job_status, 'ERROR', 'Build cube failed, job status is ' + job_status+"uri = "+response.url+' '+"********  payload  ********  " + str(payload)
+                         +' '+"********  status_code  ******** "+str(response.status_code)+' '+'********  response  ********  '+str(response.text)
+                         )
             else:
-                self.assertEquals(job_status, 'FINISHED', 'Build cube failed, job status is ' + job_status)
+                self.assertEquals(job_status, 'FINISHED', 'Build cube failed, job status is ' + job_status+"uri = "+response.url+' '+"********  payload  ********  " + str(payload)
+                         +' '+"********  status_code  ******** "+str(response.status_code)+' '+'********  response  ********  '+str(response.text)
+                         )
             # print 'Job complete.'
             timeend = datetime.now()
             dtime = (timeend - starttime).seconds
