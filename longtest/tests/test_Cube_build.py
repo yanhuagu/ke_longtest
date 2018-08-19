@@ -83,7 +83,7 @@ class cubeTest(unittest.TestCase):
 
     def testCubeBuild(self):
         """
-            每天build一天的segment range为一天
+            构建date range为一天的segment
         """
         starttime = datetime.now()
 
