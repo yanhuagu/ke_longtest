@@ -57,7 +57,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_Query.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_Query.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_Query.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_Pushdown_query.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_Pushdown_query.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="118" column="45" lean-forward="true" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
+            <state relative-caret-position="193">
+              <caret line="78" selection-start-line="78" selection-end-line="104" />
               <folding>
                 <element signature="e#44#87#0" expanded="true" />
               </folding>
@@ -189,10 +189,10 @@
         <option value="$PROJECT_DIR$/tests/aa.py" />
         <option value="$PROJECT_DIR$/tests/atest_Cube_build.py" />
         <option value="$PROJECT_DIR$/BeautifulReport/sample/sample.py" />
-        <option value="$PROJECT_DIR$/tests/test_Pushdown_query.py" />
         <option value="$PROJECT_DIR$/tests/test_Cube_build.py" />
         <option value="$PROJECT_DIR$/run_all.py" />
         <option value="$PROJECT_DIR$/tests/test_Query.py" />
+        <option value="$PROJECT_DIR$/tests/test_Pushdown_query.py" />
       </list>
     </option>
   </component>
@@ -870,16 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="118" column="45" lean-forward="true" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
-          <folding>
-            <element signature="e#44#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_all.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -896,6 +886,16 @@
           <caret line="101" column="11" lean-forward="true" selection-start-line="101" selection-start-column="11" selection-end-line="101" selection-end-column="11" />
           <folding>
             <element signature="e#43#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="78" selection-start-line="78" selection-end-line="104" />
+          <folding>
+            <element signature="e#44#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
