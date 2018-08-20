@@ -11,8 +11,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/longtest$test_query.coverage" NAME="test_query Coverage Results" MODIFIED="1533805191023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Pushdown_query_py.coverage" NAME="Unittests in test_Pushdown_query.py Coverage Results" MODIFIED="1534741484119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/longtest$Unittests_in_atest_Cube_build_py.coverage" NAME="Unittests in test_Cube_build.py Coverage Results" MODIFIED="1534741588110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Pushdown_query_py.coverage" NAME="Unittests in test_Pushdown_query.py Coverage Results" MODIFIED="1534742558655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/longtest$Unittests_in_atest_Cube_build_py.coverage" NAME="Unittests in test_Cube_build.py Coverage Results" MODIFIED="1534743091114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Query_py.coverage" NAME="Unittests in test_Query.py Coverage Results" MODIFIED="1534741398248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$aa.coverage" NAME="aa Coverage Results" MODIFIED="1534609492308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_in_longTestback_py.coverage" NAME="Unittests in longTestback.py Coverage Results" MODIFIED="1534007026210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -61,7 +61,7 @@
       <file leaf-file-name="test_Query.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_Query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
+            <state relative-caret-position="2220">
               <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
               <folding>
                 <element signature="e#43#86#0" expanded="true" />
@@ -73,8 +73,8 @@
       <file leaf-file-name="test_Pushdown_query.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+            <state relative-caret-position="293">
+              <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
               <folding>
                 <element signature="e#44#87#0" expanded="true" />
               </folding>
@@ -85,8 +85,8 @@
       <file leaf-file-name="test_Cube_build.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test_Cube_build.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+            <state relative-caret-position="256">
+              <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
               <folding>
                 <element signature="e#43#86#0" expanded="true" />
               </folding>
@@ -483,15 +483,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_Query_queryTest_testCubeQuery - 2018.08.20 at 12h 57m 44s.xml">
-      <configuration name="Unittests for test_Query.queryTest.testCubeQuery" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_Query_py - 2018.08.20 at 12h 58m 33s.xml">
-      <configuration name="Unittests in test_Query.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_Query_py - 2018.08.20 at 12h 58m 58s.xml">
-      <configuration name="Unittests in test_Query.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_Query_py - 2018.08.20 at 13h 00m 02s.xml">
       <configuration name="Unittests in test_Query.py" configurationId="tests" />
     </history-entry>
@@ -513,6 +504,15 @@
     <history-entry file="Unittests_in_test_Pushdown_query_py - 2018.08.20 at 13h 05m 37s.xml">
       <configuration name="Unittests in test_Pushdown_query.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_Cube_build_py - 2018.08.20 at 13h 18m 30s.xml">
+      <configuration name="Unittests in test_Cube_build.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_Pushdown_query_py - 2018.08.20 at 13h 22m 48s.xml">
+      <configuration name="Unittests in test_Pushdown_query.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_Cube_build_py - 2018.08.20 at 13h 32m 01s.xml">
+      <configuration name="Unittests in test_Cube_build.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="29" width="1400" height="790" extended-state="0" />
@@ -521,7 +521,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31843576" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36452514" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
@@ -861,7 +861,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_Query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
+        <state relative-caret-position="2220">
           <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
           <folding>
             <element signature="e#43#86#0" expanded="true" />
@@ -871,8 +871,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        <state relative-caret-position="293">
+          <caret line="77" column="58" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
           <folding>
             <element signature="e#44#87#0" expanded="true" />
           </folding>
@@ -881,8 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_Cube_build.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+        <state relative-caret-position="256">
+          <caret line="175" column="47" selection-start-line="175" selection-start-column="47" selection-end-line="175" selection-end-column="47" />
           <folding>
             <element signature="e#43#86#0" expanded="true" />
           </folding>
