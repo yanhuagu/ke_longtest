@@ -24,7 +24,8 @@ class queryTest_learnkylin(unittest.TestCase):
 
     headers = {
         'content-type': "application/json",
-        'authorization': "Basic QURNSU46S1lMSU4=",
+        # 'authorization': "Basic QURNSU46S1lMSU4=",
+        'authorization': "Basic YWRtaW46YWRtaW5AMTIz",
         'cache-control': "no-cache",
         'accept': "application/vnd.apache.kylin-v2+json"
     }

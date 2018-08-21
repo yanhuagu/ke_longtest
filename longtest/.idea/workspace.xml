@@ -13,15 +13,16 @@
     <SUITE FILE_PATH="coverage/longtest$test_query.coverage" NAME="test_query Coverage Results" MODIFIED="1533805191023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_in_atest_Cube_build_py.coverage" NAME="Unittests in test_Cube_build.py Coverage Results" MODIFIED="1534743091114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Pushdown_query_py.coverage" NAME="Unittests in test_Pushdown_query.py Coverage Results" MODIFIED="1534838908034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Query_py.coverage" NAME="Unittests in test_Query_ssb.py Coverage Results" MODIFIED="1534838855792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Query_py.coverage" NAME="Unittests in test_Query_ssb.py Coverage Results" MODIFIED="1534857499557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$aa.coverage" NAME="aa Coverage Results" MODIFIED="1534609492308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_in_longTestback_py.coverage" NAME="Unittests in longTestback.py Coverage Results" MODIFIED="1534007026210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_query_MyTest_testQuery1.coverage" NAME="Unittests for test_query.MyTest.testQuery1 Coverage Results" MODIFIED="1533867975429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_in_longTest_py.coverage" NAME="Unittests in longTest.py Coverage Results" MODIFIED="1534006964332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest_test_a_run.coverage" NAME="Unittests for test.MyTest.test_a_run Coverage Results" MODIFIED="1533626587123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/longtest$httpserverlog.coverage" NAME="httpserverlog Coverage Results" MODIFIED="1534853518298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest_test_b_run.coverage" NAME="Unittests for test.MyTest.test_b_run Coverage Results" MODIFIED="1533633571626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_query_MyTest.coverage" NAME="Unittests for test_query.MyTest Coverage Results" MODIFIED="1533727294449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Query_learnkylin_py.coverage" NAME="Unittests in test_Query_learnkylin.py Coverage Results" MODIFIED="1534838874353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/longtest$Unittests_in_test_Query_learnkylin_py.coverage" NAME="Unittests in test_Query_learnkylin.py Coverage Results" MODIFIED="1534857470735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_test_MyTest_testQuery.coverage" NAME="Unittests for test.MyTest.testQuery Coverage Results" MODIFIED="1533633313478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$run_all__1_.coverage" NAME="run_all (1) Coverage Results" MODIFIED="1534009020347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/longtest$Unittests_for_longTest_longTest.coverage" NAME="Unittests for longTest.longTest Coverage Results" MODIFIED="1533869343257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -60,37 +61,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run_all_threads.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run_all_threads.py">
+      <file leaf-file-name="test_Query_ssb.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/test_Query_ssb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-              <folding>
-                <element signature="e#15#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_Cube_build.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_Cube_build.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            <state relative-caret-position="253">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#43#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_Pushdown_query.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-              <folding>
-                <element signature="e#44#87#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,20 +76,8 @@
       <file leaf-file-name="test_Query_learnkylin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/test_Query_learnkylin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_Query_ssb.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/test_Query_ssb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-              <folding>
-                <element signature="e#43#86#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -157,6 +122,7 @@
       <find>learn</find>
       <find>SSB</find>
       <find>loadtest</find>
+      <find>admin</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -208,9 +174,10 @@
         <option value="$PROJECT_DIR$/tests/aaa.py" />
         <option value="$PROJECT_DIR$/tests/test_Query.py" />
         <option value="$PROJECT_DIR$/run_all_threads.py" />
-        <option value="$PROJECT_DIR$/tests/test_Pushdown_query.py" />
-        <option value="$PROJECT_DIR$/tests/test_Query_learnkylin.py" />
         <option value="$PROJECT_DIR$/tests/test_Query_ssb.py" />
+        <option value="$PROJECT_DIR$/tests/test_Pushdown_query.py" />
+        <option value="$PROJECT_DIR$/httpserverlog.py" />
+        <option value="$PROJECT_DIR$/tests/test_Query_learnkylin.py" />
       </list>
     </option>
   </component>
@@ -240,16 +207,6 @@
             <path>
               <item name="longtest" type="b2602c69:ProjectViewProjectNode" />
               <item name="longtest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="longtest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="longtest" type="462c0819:PsiDirectoryNode" />
-              <item name="BeautifulReport" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="longtest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="longtest" type="462c0819:PsiDirectoryNode" />
-              <item name="HTMLTestRunner" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="longtest" type="b2602c69:ProjectViewProjectNode" />
@@ -402,8 +359,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_all_threads">
-    <configuration name="aaa" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager">
+    <configuration name="httpserverlog" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="longtest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -411,12 +368,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/aaa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/httpserverlog.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -486,17 +443,17 @@
     <list>
       <item itemvalue="Python tests.Unittests in test_Query_ssb.py" />
       <item itemvalue="Python tests.Unittests in test_Pushdown_query.py" />
-      <item itemvalue="Python.aaa" />
       <item itemvalue="Python.run_all_threads" />
       <item itemvalue="Python tests.Unittests in test_Query_learnkylin.py" />
+      <item itemvalue="Python.httpserverlog" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in test_Query_ssb.py" />
+        <item itemvalue="Python tests.Unittests in test_Query_learnkylin.py" />
+        <item itemvalue="Python.httpserverlog" />
         <item itemvalue="Python.run_all_threads" />
         <item itemvalue="Python tests.Unittests in test_Pushdown_query.py" />
-        <item itemvalue="Python tests.Unittests in test_Query_learnkylin.py" />
-        <item itemvalue="Python tests.Unittests in test_Query_ssb.py" />
-        <item itemvalue="Python.aaa" />
       </list>
     </recent_temporary>
   </component>
@@ -514,15 +471,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_Query_py - 2018.08.20 at 13h 04m 12s.xml">
-      <configuration name="Unittests in test_Query.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_Pushdown_query_py - 2018.08.20 at 13h 05m 37s.xml">
-      <configuration name="Unittests in test_Pushdown_query.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_Cube_build_py - 2018.08.20 at 13h 18m 30s.xml">
-      <configuration name="Unittests in test_Cube_build.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_Pushdown_query_py - 2018.08.20 at 13h 22m 48s.xml">
       <configuration name="Unittests in test_Pushdown_query.py" configurationId="tests" />
     </history-entry>
@@ -544,6 +492,15 @@
     <history-entry file="Unittests_in_test_Pushdown_query_py - 2018.08.21 at 16h 08m 32s.xml">
       <configuration name="Unittests in test_Pushdown_query.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_Query_learnkylin_py - 2018.08.21 at 20h 37m 16s.xml">
+      <configuration name="Unittests in test_Query_learnkylin.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_Query_learnkylin_py - 2018.08.21 at 21h 18m 14s.xml">
+      <configuration name="Unittests in test_Query_learnkylin.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_Query_ssb_py - 2018.08.21 at 21h 19m 10s.xml">
+      <configuration name="Unittests in test_Query_ssb.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="29" width="1400" height="790" extended-state="0" />
@@ -552,12 +509,12 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28351957" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41061452" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="right" id="Coverage" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24785714" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24785714" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
@@ -585,16 +542,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/longTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="e#43#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_query.py" />
     <entry file="file://$PROJECT_DIR$/testquery.py" />
     <entry file="file://$PROJECT_DIR$/sql/sql1.json" />
@@ -889,9 +836,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-end-line="39" />
+          <folding>
+            <element signature="e#44#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/httpserverlog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="108" column="26" selection-start-line="108" selection-start-column="26" selection-end-line="108" selection-end-column="26" />
+          <folding>
+            <element signature="e#1919#1959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_Cube_build.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="-519">
           <caret line="40" column="25" lean-forward="true" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
           <folding>
             <element signature="e#43#86#0" expanded="true" />
@@ -899,27 +866,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_Pushdown_query.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#44#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_Query_learnkylin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="119">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_Query_ssb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="253">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#43#86#0" expanded="true" />
           </folding>
