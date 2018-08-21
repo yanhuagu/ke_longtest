@@ -30,8 +30,8 @@ RUN_MODE = 0
 
 @ddt.ddt
 class pushdownTest(unittest.TestCase):
-    # base_url = "http://10.1.1.83:7070/kylin/api"
-    base_url = "http://10.1.40.104:7298/kylin/api"
+    base_url = "http://10.1.1.83:7070/kylin/api"
+    # base_url = "http://10.1.40.104:7298/kylin/api"
 
     headers = {
         'content-type': "application/json",
@@ -69,8 +69,8 @@ class pushdownTest(unittest.TestCase):
 
         ##learn kylin
         #
-        [
-            '''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select lstg_format_name, sum(price) as GMV from kylin_sales where lstg_format_name='FP-GTC' group by lstg_format_name","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # [
+        #     '''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select lstg_format_name, sum(price) as GMV from kylin_sales where lstg_format_name='FP-GTC' group by lstg_format_name","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
         # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select sum(price) as GMV, count(1) as TRANS_CNT from kylin_sales","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
         # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select kylin_sales.lstg_format_name, sum(price) as GMV, count(*) as TRANS_CNT from kylin_sales group by kylin_sales.lstg_format_name;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
         # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select kylin_sales.lstg_format_name,sum(kylin_sales.price) as GMV, count(*) as TRANS_CNT from kylin_sales group by kylin_sales.lstg_format_name having sum(price)>5000","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
@@ -83,10 +83,10 @@ class pushdownTest(unittest.TestCase):
 
 
         ###ssb
-        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(v_revenue) as revenue  from p_lineorder  left join dates on lo_orderdate = d_datekey  where d_year = 1993  and lo_discount between 1 and 3  and lo_quantity < 25;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(v_revenue) as revenue from p_lineorder left join dates on lo_orderdate = d_datekey where d_yearmonthnum = 199401 and lo_discount between 4 and 6 and lo_quantity between 26 and 35;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(v_revenue) as revenue from p_lineorder left join dates on lo_orderdate = d_datekey where d_weeknuminyear = 6 and d_year = 1994 and lo_discount between 5 and 7 and lo_quantity between 26 and 35;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}''']
-        #
+        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(v_revenue) as revenue  from p_lineorder  left join dates on lo_orderdate = d_datekey  where d_year = 1993  and lo_discount between 1 and 3  and lo_quantity < 25;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(v_revenue) as revenue from p_lineorder left join dates on lo_orderdate = d_datekey where d_yearmonthnum = 199401 and lo_discount between 4 and 6 and lo_quantity between 26 and 35;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(v_revenue) as revenue from p_lineorder left join dates on lo_orderdate = d_datekey where d_weeknuminyear = 6 and d_year = 1994 and lo_discount between 5 and 7 and lo_quantity between 26 and 35;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}''']
+
 
 
 
