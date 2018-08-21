@@ -18,8 +18,10 @@ from nose.plugins.plugintest import run_buffered as run
 
 
 @ddt.ddt
-class queryTest(unittest.TestCase):
-    base_url = "http://10.1.1.83:7070/kylin/api"
+class queryTest_ssb(unittest.TestCase):
+    # base_url = "http://10.1.1.83:7070/kylin/api"
+    base_url = "http://10.1.40.104:7298/kylin/api"
+
     headers = {
         'content-type': "application/json",
         'authorization': "Basic QURNSU46S1lMSU4=",
@@ -42,8 +44,8 @@ class queryTest(unittest.TestCase):
     @classmethod
     def tearDownClass(self):
         # 必须使用 @ classmethod装饰器, 所有test运行完后运行一次
-        queryTest.cur.close()
-        queryTest.conn.close()
+        queryTest_ssb.cur.close()
+        queryTest_ssb.conn.close()
         pass
 
     @classmethod
@@ -56,18 +58,18 @@ class queryTest(unittest.TestCase):
     @ ddt.data(
 
         ##ssb
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(lo_revenue) as lo_revenue, d_year, p_brand from p_lineorder left join dates on lo_orderdate = d_datekey left join part on lo_partkey = p_partkey left join supplier on lo_suppkey = s_suppkey where p_category = 'MFGR#12' and s_region = 'AMERICA' group by d_year, p_brand order by d_year, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(lo_revenue) as lo_revenue, d_year, p_brand from p_lineorder left join dates on lo_orderdate = d_datekey left join part on lo_partkey = p_partkey left join supplier on lo_suppkey = s_suppkey where p_brand between 'MFGR#2221' and 'MFGR#2228' and s_region = 'ASIA' group by d_year, p_brand order by d_year, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(lo_revenue) as lo_revenue, d_year, p_brand from p_lineorder left join dates on lo_orderdate = d_datekey left join part on lo_partkey = p_partkey left join supplier on lo_suppkey = s_suppkey where p_brand = 'MFGR#2239' and s_region = 'EUROPE' group by d_year, p_brand order by d_year, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_nation, s_nation, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where c_region = 'ASIA' and s_region = 'ASIA'and d_year >= 1992 and d_year <= 1997 group by c_nation, s_nation, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_city, s_city, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where c_nation = 'UNITED STATES' and s_nation = 'UNITED STATES' and d_year >= 1992 and d_year <= 1997 group by c_city, s_city, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_city, s_city, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where (c_city='UNITED KI1' or c_city='UNITED KI5') and (s_city='UNITED KI1' or s_city='UNITED KI5') and d_year >= 1992 and d_year <= 1997 group by c_city, s_city, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_city, s_city, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where (c_city='UNITED KI1' or c_city='UNITED KI5') and (s_city='UNITED KI1' or s_city='UNITED KI5') and d_yearmonth = 'Dec1997' group by c_city, s_city, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select d_year, c_nation, sum(lo_revenue) - sum(lo_supplycost) as profit from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey left join part on lo_partkey = p_partkey where c_region = 'AMERICA' and s_region = 'AMERICA' and (p_mfgr = 'MFGR#1' or p_mfgr = 'MFGR#2') group by d_year, c_nation order by d_year, c_nation;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select d_year, s_nation, p_category, sum(lo_revenue) - sum(lo_supplycost) as profit from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey left join part on lo_partkey = p_partkey where c_region = 'AMERICA'and s_region = 'AMERICA' and (d_year = 1997 or d_year = 1998) and (p_mfgr = 'MFGR#1' or p_mfgr = 'MFGR#2') group by d_year, s_nation, p_category order by d_year, s_nation, p_category;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
-        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select d_year, s_city, p_brand, sum(lo_revenue) - sum(lo_supplycost) as profit from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey left join part on lo_partkey = p_partkey where c_region = 'AMERICA'and s_nation = 'UNITED STATES' and (d_year = 1997 or d_year = 1998) and p_category = 'MFGR#14' group by d_year, s_city, p_brand order by d_year, s_city, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}''']
-
-
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(lo_revenue) as lo_revenue, d_year, p_brand from p_lineorder left join dates on lo_orderdate = d_datekey left join part on lo_partkey = p_partkey left join supplier on lo_suppkey = s_suppkey where p_category = 'MFGR#12' and s_region = 'AMERICA' group by d_year, p_brand order by d_year, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(lo_revenue) as lo_revenue, d_year, p_brand from p_lineorder left join dates on lo_orderdate = d_datekey left join part on lo_partkey = p_partkey left join supplier on lo_suppkey = s_suppkey where p_brand between 'MFGR#2221' and 'MFGR#2228' and s_region = 'ASIA' group by d_year, p_brand order by d_year, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select sum(lo_revenue) as lo_revenue, d_year, p_brand from p_lineorder left join dates on lo_orderdate = d_datekey left join part on lo_partkey = p_partkey left join supplier on lo_suppkey = s_suppkey where p_brand = 'MFGR#2239' and s_region = 'EUROPE' group by d_year, p_brand order by d_year, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_nation, s_nation, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where c_region = 'ASIA' and s_region = 'ASIA'and d_year >= 1992 and d_year <= 1997 group by c_nation, s_nation, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_city, s_city, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where c_nation = 'UNITED STATES' and s_nation = 'UNITED STATES' and d_year >= 1992 and d_year <= 1997 group by c_city, s_city, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_city, s_city, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where (c_city='UNITED KI1' or c_city='UNITED KI5') and (s_city='UNITED KI1' or s_city='UNITED KI5') and d_year >= 1992 and d_year <= 1997 group by c_city, s_city, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select c_city, s_city, d_year, sum(lo_revenue) as lo_revenue from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey where (c_city='UNITED KI1' or c_city='UNITED KI5') and (s_city='UNITED KI1' or s_city='UNITED KI5') and d_yearmonth = 'Dec1997' group by c_city, s_city, d_year order by d_year asc, lo_revenue desc;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select d_year, c_nation, sum(lo_revenue) - sum(lo_supplycost) as profit from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey left join part on lo_partkey = p_partkey where c_region = 'AMERICA' and s_region = 'AMERICA' and (p_mfgr = 'MFGR#1' or p_mfgr = 'MFGR#2') group by d_year, c_nation order by d_year, c_nation;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select d_year, s_nation, p_category, sum(lo_revenue) - sum(lo_supplycost) as profit from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey left join part on lo_partkey = p_partkey where c_region = 'AMERICA'and s_region = 'AMERICA' and (d_year = 1997 or d_year = 1998) and (p_mfgr = 'MFGR#1' or p_mfgr = 'MFGR#2') group by d_year, s_nation, p_category order by d_year, s_nation, p_category;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"ssb","sql":"select d_year, s_city, p_brand, sum(lo_revenue) - sum(lo_supplycost) as profit from p_lineorder left join dates on lo_orderdate = d_datekey left join customer on lo_custkey = c_custkey left join supplier on lo_suppkey = s_suppkey left join part on lo_partkey = p_partkey where c_region = 'AMERICA'and s_nation = 'UNITED STATES' and (d_year = 1997 or d_year = 1998) and p_category = 'MFGR#14' group by d_year, s_city, p_brand order by d_year, s_city, p_brand;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}''']
+#
+#
 
 #tpch
         # ['''{"acceptPartial":true,"limit":50000,"offset":0,"project":"tpch_kap_24","sql":"select  l_returnflag,  l_linestatus,  sum(l_quantity) as sum_qty,  sum(l_extendedprice) as sum_base_price,  sum(l_extendedprice * (1 - l_discount)) as sum_disc_price,  sum(l_extendedprice * (1 - l_discount) * (1 + l_tax)) as sum_charge,  avg(l_quantity) as avg_qty,  avg(l_extendedprice) as avg_price,  avg(l_discount) as avg_disc, count(*) as count_order from lineitem where l_shipdate <= '1998-09-16' group by l_returnflag, l_linestatus order by l_returnflag,l_linestatus;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],#Q1
@@ -94,7 +96,7 @@ class queryTest(unittest.TestCase):
 
 ##learn kylin
         #
-        # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select lstg_format_name, sum(price) as GMV from kylin_sales where lstg_format_name='FP-GTC' group by lstg_format_name","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
+        ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select lstg_format_name, sum(price) as GMV from kylin_sales where lstg_format_name='FP-GTC' group by lstg_format_name","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
         # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select sum(price) as GMV, count(1) as TRANS_CNT from kylin_sales","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
         # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select kylin_sales.lstg_format_name, sum(price) as GMV, count(*) as TRANS_CNT from kylin_sales group by kylin_sales.lstg_format_name;","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
         # ['''{"acceptPartial":true,"limit":"5","offset":0,"project":"learn_kylin","sql":"select kylin_sales.lstg_format_name,sum(kylin_sales.price) as GMV, count(*) as TRANS_CNT from kylin_sales group by kylin_sales.lstg_format_name having sum(price)>5000","backdoorToggles":{"DEBUG_TOGGLE_HTRACE_ENABLED":false}}'''],
@@ -110,21 +112,21 @@ class queryTest(unittest.TestCase):
     @ ddt.unpack
     @BeautifulReport.add_test_img('aaaa')
 
-    def testCubeQuery(self,payload):
+    def testCubeQuery_ssb(self,payload):
         """
             testQuery
         """
-        query_url = queryTest.base_url + "/query"
+        query_url = queryTest_ssb.base_url + "/query"
         starttime = datetime.now()
-        response = requests.request("POST", query_url, data=payload, headers=queryTest.headers)
+        response = requests.request("POST", query_url, data=payload, headers=queryTest_ssb.headers)
         timeend = datetime.now()
         dtime = (timeend - starttime).seconds
         sql = '''
         INSERT INTO `longtest`.`result`(`id`, `name`, `request`, `respons`, `starttime`, `endtime`, `status`, `date`,`D_time`) VALUES (null, '{namepro}', '', '', '{timestart}', '{timeend}', '{status}','{timeend}', '{D_time}');
         '''
         sql = sql.format(namepro="testQuery",request1=str(response.url),respons1=str(response.text),timestart = starttime,timeend = timeend,D_time = dtime,status = str(response.status_code))
-        queryTest.cur.execute(sql)
-        queryTest.conn.commit()
+        queryTest_ssb.cur.execute(sql)
+        queryTest_ssb.conn.commit()
         time.sleep(random.randint(1,6))
         self.assertEqual(
                          response.status_code,200,"uri = "+response.url+' '+"********  payload  ********  " + str(payload)
@@ -139,7 +141,7 @@ class queryTest(unittest.TestCase):
 
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()
-    test_suite.addTest(unittest.makeSuite(queryTest))
+    test_suite.addTest(unittest.makeSuite(queryTest_ssb))
     run(test_suite)
 
     # result = BeautifulReport(test_suite)

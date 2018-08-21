@@ -14,7 +14,7 @@ def add_case(case_path=casepath, rule="test*.py"):
     discover = unittest.defaultTestLoader.discover(case_path,pattern=rule, top_level_dir=None)
     return discover
 
-@threads(3)
+@threads(4)
 def run_case(all_case):
     '''执行所有的用例, 并把结果写入测试报告'''
     result = BeautifulReport(all_case)
