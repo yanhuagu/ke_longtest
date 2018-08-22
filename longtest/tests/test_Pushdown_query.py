@@ -30,7 +30,7 @@ RUN_MODE = 0
 
 @ddt.ddt
 class pushdownTest(unittest.TestCase):
-    base_url = "http://10.1.1.83:7070/kylin/api"
+    base_url = "http://10.1.1.84:7070/kylin/api"
     # base_url = "http://10.1.40.104:7298/kylin/api"
 
     headers = {

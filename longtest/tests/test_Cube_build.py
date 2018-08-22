@@ -44,10 +44,11 @@ def enableCube(cubename):
 
 @ddt.ddt
 class cubeTest(unittest.TestCase):
-    base_url = "http://10.1.40.102:7070/kylin/api"
+    base_url = "http://10.1.40.104:7070/kylin/api"
     headers = {
         'content-type': "application/json",
-        'authorization': "Basic QURNSU46S1lMSU4=",
+        # 'authorization': "Basic QURNSU46S1lMSU4=",
+        'authorization': "Basic YWRtaW46YWRtaW5AMTIz",
         'cache-control': "no-cache",
         'accept': "application/vnd.apache.kylin-v2+json"
     }
