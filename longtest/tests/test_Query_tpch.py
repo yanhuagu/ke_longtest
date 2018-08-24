@@ -19,7 +19,7 @@ from nose.plugins.plugintest import run_buffered as run
 
 @ddt.ddt
 class queryTest_tpch(unittest.TestCase):
-    base_url = "http://10.1.1.84:7070/kylin/api"
+    base_url = "http://10.1.1.83:7070/kylin/api"
     # base_url = "http://10.1.40.104:7298/kylin/api"
 
     headers = {
