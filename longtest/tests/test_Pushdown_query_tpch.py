@@ -105,10 +105,9 @@ class pushdownTest_tpch(unittest.TestCase):
         sql = '''
         INSERT INTO `longtest`.`result`(`id`, `name`, `request`, `respons`, `starttime`, `endtime`, `status`, `date`,`D_time`) VALUES (null, '{namepro}', '', '', '{timestart}', '{timeend}', '{status}','{timeend}', '{D_time}');
         '''
-        sql = sql.format(namepro="testPushdownQuery",request1=str(response.url),respons1=str(response.text),timestart = starttime,timeend = timeend,D_time = dtime,status = str(response.status_code))
+        sql = sql.format(namepro="pushdownTest_tpch",request1=str(response.url),respons1=str(response.text),timestart = starttime,timeend = timeend,D_time = dtime,status = str(response.status_code))
         pushdownTest_tpch.cur.execute(sql)
         pushdownTest_tpch.conn.commit()
-        time.sleep(random.randint(1,6))
         self.assertEqual(
                          response.status_code,200,"uri = "+response.url+' '+"payload = " + str(payload)
                          +' '+"status_code = "+str(response.status_code)+' '+'response = '+str(response.text)
@@ -117,6 +116,7 @@ class pushdownTest_tpch(unittest.TestCase):
                          json.loads(response.text)['code'],'000',"uri = "+response.url+' '+"payload = " + str(payload)
                          +' '+"status_code = "+str(response.status_code)+' '+'response = '+str(response.text)
                          )
+        time.sleep(random.randint(1,6))
 
 
 

@@ -125,10 +125,9 @@ class queryTest_ssb(unittest.TestCase):
         sql = '''
         INSERT INTO `longtest`.`result`(`id`, `name`, `request`, `respons`, `starttime`, `endtime`, `status`, `date`,`D_time`) VALUES (null, '{namepro}', '', '', '{timestart}', '{timeend}', '{status}','{timeend}', '{D_time}');
         '''
-        sql = sql.format(namepro="testQuery",request1=str(response.url),respons1=str(response.text),timestart = starttime,timeend = timeend,D_time = dtime,status = str(response.status_code))
+        sql = sql.format(namepro="queryTest_ssb",request1=str(response.url),respons1=str(response.text),timestart = starttime,timeend = timeend,D_time = dtime,status = str(response.status_code))
         queryTest_ssb.cur.execute(sql)
         queryTest_ssb.conn.commit()
-        time.sleep(random.randint(1,6))
         self.assertEqual(
                          response.status_code,200,"uri = "+response.url+' '+"********  payload  ********  " + str(payload)
                          +' '+"********  status_code  ******** "+str(response.status_code)+' '+'********  response  ********  '+str(response.text)
@@ -138,6 +137,7 @@ class queryTest_ssb(unittest.TestCase):
                          json.loads(response.text)['code'],"000","uri = "+response.url+' '+"********  payload  ********  " + str(payload)
                          +' '+"********  status_code  ******** "+str(response.status_code)+' '+'********  response  ********  '+str(response.text)
                          )
+        time.sleep(random.randint(1,6))
 
 
 if __name__ == '__main__':
